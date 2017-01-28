@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Upload File Request Page</title>
+<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#AddButton').click( function() {
+                    var counter = $('#TextBox').val();
+                    counter++ ;
+                    $('#TextBox').val(counter);
+                });
+            });
+        </script>
+
+</head>
+<body>
+	
+	<form method="POST" action="uploadFile" th:action="@{/photoUpload}" enctype="multipart/form-data">
+		File to upload: <input type="file" name="file" />
+ 
+		Name: <input type="text" name="name" id="name" value="1.png"/>
+		
+	
+        
+  		
+ 		
+		<input type="submit" value="Upload" id='AddButton'  /> Press here to upload the file!
+	</form>	
+	
+</body>
+</html>

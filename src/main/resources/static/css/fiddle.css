@@ -1,0 +1,13 @@
+/* Latest compiled and minified CSS included as External Resource*/
+
+/* Optional theme */
+ @import url('bootstrap-theme.min.css');
+ body {
+    margin: 10px;
+}
+.btn-danger {
+    background:red;
+}
+.editField {
+    margin-top:10px;
+}

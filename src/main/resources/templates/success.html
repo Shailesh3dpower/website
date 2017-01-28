@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+  <title>Bootstrap</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/index.css"/>
+   
+<style>
+	
+html,
+body,
+.view {
+    height: 100%;
+}
+
+.view {
+    background: "" no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+	
+</style>
+	
+	
+<style th:inline="text">
+    body{
+      <!--  background: url{[[@{image/indian-matrimony-business.jpg}]]}
+                    no-repeat center center fixed; -->
+    }
+    
+    #container1 {
+    background-color: #e2dada;
+}
+
+.centered-form {
+    margin-top: 90px;
+    margin-bottom: 0px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+</style>
+  
+</head>
+<body>
+
+    <h1>Result Success!</h1>
+   
+    <p th:text="'Profile for: ' + ${register.profileFor}" />
+    <p th:text="'Password: ' + ${register.password}" />
+    <p th:text="'firstName: ' + ${register.firstName}" />
+    <p th:text="'lastName: ' + ${register.lastName}" />
+    <p th:text="'email: ' + ${register.email}" />
+    <p th:text="'dayob: ' + ${register.dayob}" />
+    <p th:text="'monthob: ' + ${register.monthob}" />
+    <p th:text="'countryCode: ' + ${register.countryCode}" />
+    <p th:text="'mobile: ' + ${register.mobile}" />
+    <a href="/">Submit another Customer Form</a>
+    
+    
+ 
+    <!-- Navigation -->
+   
+   <nav class="navbar navbar-fixed-top navbar-light" style="background-color: #E9967A;">
+   <!--  <nav class="navbar navbar-fixed-top" role="navigation">  -->
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                
+ 
+ 
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+   
+<!--Mask-->
+<div class="view">
+
+
+    <!--Intro content-->
+    <div class="full-bg-img flex-center" >
+    <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Please Register</h3>
+                    </div>
+                    <div class="panel-body">
+					<div class="form-group">
+   <!--  <form action="#"   method="post">  -->
+    <form action="#" th:action="@{/personaldetails}" th:object="${personaldetails}" method="post">  
+    <div class="form-group" align="left">
+							  <label for="sel1"><span class="style2">More Personal Details</span></label>
+							
+							  <div class="form-group" align="left">
+								<label for="usr">Marital status * :</label>
+								
+								<div class="radio">
+					
+					
+				<label class="radio-inline"><input th:feild="*{maritalStatus}" id="MARITAL_STATUS1" value="1" type="radio" checked="checked" />Never Married  </label>
+																
+				<label class="radio-inline"><input th:feild="*{maritalStatus}" id="MARITAL_STATUS2" value="2" type="radio" />Widowed </label>
+																
+				<label class="radio-inline"><input th:feild="*{maritalStatus}" id="MARITAL_STATUS3" value="3" type="radio" />Divorced </label>
+										
+				<label class="radio-inline"><input th:feild="*{maritalStatus}" id="MARITAL_STATUS4" value="4" type="radio" />Awaiting divorce </label>
+								</div>
+							</div>	
+							
+		</div>									 
+							 <div class="form-group" align="left">
+								<label for="usr">Gothra(m) :</label>
+								<input type="text" class="form-control" id="usr" th:feild="*{gothra}" placeholder="Please Enter Gothra" />
+							 </div>		
+
+							 
+							 
+							 <label for="sel1"><span class="style2">Groom's Location Details</span></label>
+							 <div class="form-group" align="left">
+							  <label for="sel1">Country living in * :</label>
+							  
+							  <select th:feild="*{country}"  id="COUNTRY" class="form-control" >
+										<option value="0" selected="selected">- Select -</option>
+					  <option style="color: rgb(0, 79, 0);" value="98" >India</option><option style="color: rgb(0, 79, 0);" value="222">United States of America</option><option style="color: rgb(0, 79, 0);" value="220">United Arab Emirates</option><option style="color: rgb(0, 79, 0);" value="221">United Kingdom</option><option style="color: rgb(0, 79, 0);" value="13">Australia</option><option style="color: rgb(0, 79, 0);" value="189">Singapore</option><option style="color: rgb(0, 79, 0);" value="39">Canada</option><option style="color: rgb(0, 79, 0);" value="173">Qatar</option><option style="color: rgb(0, 79, 0);" value="114">Kuwait</option><option style="color: rgb(0, 79, 0);" value="161">Oman</option><option style="color: rgb(0, 79, 0);" value="17">Bahrain</option><option style="color: rgb(0, 79, 0);" value="185">Saudi Arabia</option><option style="color: rgb(0, 79, 0);" value="129">Malaysia</option><option style="color: rgb(0, 79, 0);" value="80">Germany</option><option style="color: rgb(0, 79, 0);" value="153">New Zealand</option><option style="color: rgb(0, 79, 0);" value="73">France</option><option style="color: rgb(0, 79, 0);" value="102">Ireland</option><option style="color: rgb(0, 79, 0);" value="203">Switzerland</option><option style="color: rgb(0, 79, 0);" value="193">South Africa</option><option style="color: rgb(0, 79, 0);" value="195">Sri Lanka</option><option style="color: rgb(0, 79, 0);" value="99">Indonesia</option><option style="color: rgb(0, 79, 0);" value="149">Nepal</option><option style="color: rgb(0, 79, 0);" value="162">Pakistan</option><option style="color: rgb(0, 79, 0);" value="18">Bangladesh</option><option style="color: rgb(0, 79, 0);" value="1">Afghanistan</option><option style="color: rgb(0, 79, 0);" value="888">Show more options</option>									</select>
+					  
+							  
+							  </div>
+							  
+							  <div class="form-group" align="left">
+							  <label for="sel1">State living in * :</label>
+
+							  <select th:feild="*{residingstate}"  id="RESIDINGSTATE_SEL" class="form-control">
+															<option selected="selected" value="0">- Select his current location-</option>
+															<option>Ahmedabad</option> 
+															<option>Bengaluru/Bangalore</option>
+															<option>Chandigarh</option>
+															<option>Chennai</option>
+															<option>Delhi</option>
+															<option>Gurgaon</option>
+															<option>Hyderabad/Secunderabad</option>
+															<option>Kolkatta</option>
+															<option>Mumbai</option>
+															<option>Noida</option>
+															<option>Pune</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Andhra Pradesh-</i></font></option>
+															<option>Anantapur</option>
+															<option>Guntakal</option>
+															<option>Guntur</option>
+															<option>Hyderabad/Secunderabad</option>
+															<option>kakinada</option>
+															<option>kurnool</option>
+															<option>Nellore</option>
+															<option>Nizamabad</option>
+															<option>Rajahmundry</option>
+															<option>Tirupati</option>
+															<option>Vijayawada</option>
+															<option>Visakhapatnam</option>
+															<option>Warangal</option>
+															<option>Andra Pradesh-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Arunachal Pradesh-</i></font></option>
+															<option>Itanagar</option>
+															<option>Arunachal Pradesh-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Assam-</i></font></option>
+															<option>Guwahati</option>
+															<option>Silchar</option>
+															<option>Assam-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Bihar-</i></font></option>
+															<option>Bhagalpur</option>
+															<option>Patna</option>
+															<option>Bihar-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Chhattisgarh-</i></font></option>
+															<option>Bhillai</option>
+															<option>Bilaspur</option>
+															<option>Raipur</option>
+															<option>Chhattisgarh-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Goa-</i></font></option>
+															<option>Panjim/Panaji</option>
+															<option>Vasco Da Gama</option>
+															<option>Goa-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Gujarat-</i></font></option>
+															<option>Ahmedabad</option>
+															<option>Anand</option>
+															<option>Ankleshwar</option>
+															<option>Bharuch</option>
+															<option>Bhavnagar</option>
+															<option>Bhuj</option>
+															<option>Gandhinagar</option>
+															<option>Gir</option>
+															<option>Jamnagar</option>
+															<option>Kandla</option>
+															<option>Porbandar</option>
+															<option>Rajkot</option>
+															<option>Surat</option>
+															<option>Vadodara/Baroda</option>
+															<option>Valsad</option>
+															<option>Vapi</option>
+															<option>Gujarat-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Haryana-</i></font></option>
+															<option>Ambala</option>
+															<option>Chandigarh</option>
+															<option>Faridabad</option>
+															<option>Gurgaon</option>
+															<option>Hisar</option>
+															<option>Karnal</option>
+															<option>Kurukshetra</option>
+															<option>Panipat</option>
+															<option>Rohtak</option>
+															<option>Haryana-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Himachal Pradesh-</i></font></option>
+															<option>Dalhousie</option>
+															<option>Dharmasala</option>
+															<option>Kulu/Manali</option>
+															<option>Shimla</option>
+															<option>Himachal Pradesh-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Jammu and Kashmir-</i></font></option>
+															<option>Jammu</option>
+															<option>Srinagar</option>
+															<option>Jammu and Kashmir-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Jharkhand-</i></font></option>
+															<option>Bokaro</option>
+															<option>Dhanbad</option>
+															<option>Jamshedpur</option>
+															<option>Ranchi</option>
+															<option>Jharkhand-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Karnataka-</i></font></option>
+															<option>Bengaluru/Bangalore</option>
+															<option>Belgaum</option>
+															<option>Bellary</option>
+															<option>Bidar</option>
+															<option>Dharwad</option>
+															<option>Gulbarga</option>
+															<option>Hubli</option>
+															<option>Kolar</option>
+															<option>Mangalore</option>
+															<option>Mysoru/Mysore</option>
+															<option>Karnataka-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Kerala-</i></font></option>
+															<option>Calicut</option>
+															<option>Cochin</option>
+															<option>Ernakulam</option>
+															<option>Kannur</option>
+															<option>Kochi</option>
+															<option>Kollam</option>
+															<option>Kottayam</option>
+															<option>Kozhikode</option>
+															<option>Palakkad</option>
+															<option>Palghat</option>
+															<option>Thrissur</option>
+															<option>Trivandrum</option>
+															<option>Kerela-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Madhya Pradesh-</i></font></option>
+															<option>Bhopal</option>
+															<option>Gwalior</option>
+															<option>Indore</option>
+															<option>Jabalpur</option>
+															<option>Ujjain</option>
+															<option>Madhya Pradesh-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Maharashtra-</i></font></option>
+															<option>Ahmednagar</option>
+															<option>Aurangabad</option>
+															<option>Jalgaon</option>
+															<option>Kolhapur</option>
+															<option>Mumbai</option>
+															<option>Mumbai Suburbs</option>
+															<option>Nagpur</option>
+															<option>Nasik</option>
+															<option>Navi Mumbai</option>
+															<option>Pune</option>
+															<option>Solapur</option>
+															<option>Maharashtra-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Manipur-</i></font></option>
+															<option>Imphal</option>
+															<option>Manipur-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Meghalaya-</i></font></option>
+															<option>Shillong</option>
+															<option>Meghalaya-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Mizoram-</i></font></option>
+															<option>Aizawal</option>
+															<option>Mizoram-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Nagaland-</i></font></option>
+															<option>Dimapur</option>
+															<option>Nagaland-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Orissa-</i></font></option>
+															<option>Bhubaneshwar</option>
+															<option>Cuttak</option>
+															<option>Paradeep</option>
+															<option>Puri</option>
+															<option>Rourkela</option>
+															<option>Orissa-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Punjab-</i></font></option>
+															<option>Amritsar</option>
+															<option>Bathinda</option>
+															<option>Chandigarh</option>
+															<option>Jalandhar</option>
+															<option>Ludhiana</option>
+															<option>Mohali</option>
+															<option>Pathankot</option>
+															<option>Patiala</option>
+															<option>Punjab-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Rajasthan-</i></font></option>
+															<option>Ajmer</option>
+															<option>Jaipur</option>
+															<option>Jaisalmer</option>
+															<option>Jodhpur</option>
+															<option>Kota</option>
+															<option>Udaipur</option>
+															<option>Rajasthan-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Sikkim-</i></font></option>
+															<option>Gangtok</option>
+															<option>Sikkim-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Tamil Nadu-</i></font></option>
+															<option>Chennai</option>
+															<option>Coimbatore</option>
+															<option>Cuddalore</option>
+															<option>Erode</option>
+															<option>Hosur</option>
+															<option>Madurai</option>
+															<option>Nagerkoil</option>
+															<option>Ooty</option>
+															<option>Salem</option>
+															<option>Thanjavur</option>
+															<option>Tirunalveli</option>
+															<option>Trichy</option>
+															<option>Tuticorin</option>
+															<option>Vellore</option>
+															<option>Tamil Nadu-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Tripura-</i></font></option>
+															<option>Agartala</option>
+															<option>Tripura-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Union Territories-</i></font></option>
+															<option>Chandigarh</option>
+															<option>Dadra and Nagar Haveli-Silvassa</option>
+															<option>Daman and Diu</option>
+															<option>Delhi</option>
+															<option>Pondichery</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Uttar Pradesh-</i></font></option>
+															<option>Agra</option>
+															<option>Aligarh</option>
+															<option>Allahabad</option>
+															<option>Bareilly</option>
+															<option>Faizabad</option>
+															<option>Ghaziabad</option>
+															<option>Gorakhpur</option>
+															<option>Kanpur</option>
+															<option>Lucknow</option>
+															<option>Mathura</option>
+															<option>Meerut</option>
+															<option>Moradabad</option>
+															<option>Noida</option>
+															<option>Varanasi/Banaras</option>
+															<option>Uttar Pradesh-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Uttaranchal-</i></font></option>
+															<option>Dehradun</option>
+															<option>Roorkee</option>
+															<option>Uttaranchal-Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-West Bengal-</i></font></option>
+															<option>Asansol</option>
+															<option>Durgapur</option>
+															<option>Haldia</option>
+															<option>Kharagpur</option>
+															<option>Kolkatta</option>
+															<option>Siliguri</option>
+															<option>West Bengal - Other</option>
+															<option disabled="disabled" style="background-color:#3E3E3E"><font color="#FFFFFF"><i>-Other-</i></font></option>
+															<option>Other</option>
+															
+														</select>
+							  </div>
+							  
+							  <div class="form-group" align="left">
+								<label for="usr">City living in * :</label>
+								<input type="text" class="form-control" id="usr" th:feild="*{city}"   placeholder="Please Enter City live in" />
+							 </div>		
+							 <label for="sel1"><span class="style2">Physical Attributes</span></label>
+							 
+							 <label for="sel1">Height *	:</label>
+							 
+							 <div class="form-inline" align="left">
+							
+							<div class="form-group" align="left">
+							   
+							  <select th:field="*{height}"  size="1" class="form-control" style="width:175px;" id="FEET">
+													<option value="0">- Feet/Inches -</option>
+																										<option value="4-6" >4ft 6in</option>
+																										<option value="4-7" >4ft 7in</option>
+																										<option value="4-8" >4ft 8in</option>
+																										<option value="4-9" >4ft 9in</option>
+																										<option value="4-10" >4ft 10in</option>
+																										<option value="4-11" >4ft 11in</option>
+																										<option value="5" >5ft</option>
+																										<option value="5-1" >5ft 1in</option>
+																										<option value="5-2" >5ft 2in</option>
+																										<option value="5-3" >5ft 3in</option>
+																										<option value="5-4" >5ft 4in</option>
+																										<option value="5-5" >5ft 5in</option>
+																										<option value="5-6" >5ft 6in</option>
+																										<option value="5-7" >5ft 7in</option>
+																										<option value="5-8" >5ft 8in</option>
+																										<option value="5-9" >5ft 9in</option>
+																										<option value="5-10" >5ft 10in</option>
+																										<option value="5-11" >5ft 11in</option>
+																										<option value="6" >6ft</option>
+																										<option value="6-1" >6ft 1in</option>
+																										<option value="6-2" >6ft 2in</option>
+																										<option value="6-3" >6ft 3in</option>
+																										<option value="6-4" >6ft 4in</option>
+																										<option value="6-5" >6ft 5in</option>
+																										<option value="6-6" >6ft 6in</option>
+																										<option value="6-7" >6ft 7in</option>
+																										<option value="6-8" >6ft 8in</option>
+																										<option value="6-9" >6ft 9in</option>
+																										<option value="6-10" >6ft 10in</option>
+																										<option value="6-11" >6ft 11in</option>
+																										<option value="7" >7ft</option>
+																												
+											</select>     (or) 
+											
+											<select th:feild="*{cms}" size="1" class="form-control" style="width:175px;" id="CMS">
+										<option value="0">- Cms -</option>
+										<option value="137">137cm</option><option value="138">138cm</option><option value="139">139cm</option><option value="140">140cm</option><option value="141">141cm</option><option value="142">142cm</option><option value="143">143cm</option><option value="144">144cm</option><option value="145">145cm</option><option value="146">146cm</option><option value="147">147cm</option><option value="148">148cm</option><option value="149">149cm</option><option value="150">150cm</option><option value="151">151cm</option><option value="152">152cm</option><option value="153">153cm</option><option value="154">154cm</option><option value="155">155cm</option><option value="156">156cm</option><option value="157">157cm</option><option value="158">158cm</option><option value="159">159cm</option><option value="160">160cm</option><option value="161">161cm</option><option value="162">162cm</option><option value="163">163cm</option><option value="164">164cm</option><option value="165">165cm</option><option value="166">166cm</option><option value="167">167cm</option><option value="168">168cm</option><option value="169">169cm</option><option value="170">170cm</option><option value="171">171cm</option><option value="172">172cm</option><option value="173">173cm</option><option value="174">174cm</option><option value="175">175cm</option><option value="176">176cm</option><option value="177">177cm</option><option value="178">178cm</option><option value="179">179cm</option><option value="180">180cm</option><option value="181">181cm</option><option value="182">182cm</option><option value="183">183cm</option><option value="184">184cm</option><option value="185">185cm</option><option value="186">186cm</option><option value="187">187cm</option><option value="188">188cm</option><option value="189">189cm</option><option value="190">190cm</option><option value="191">191cm</option><option value="192">192cm</option><option value="193">193cm</option><option value="194">194cm</option><option value="195">195cm</option><option value="196">196cm</option><option value="197">197cm</option><option value="198">198cm</option><option value="199">199cm</option><option value="200">200cm</option><option value="201">201cm</option><option value="202">202cm</option><option value="203">203cm</option><option value="204">204cm</option><option value="205">205cm</option><option value="206">206cm</option><option value="207">207cm</option><option value="208">208cm</option><option value="209">209cm</option><option value="210">210cm</option><option value="211">211cm</option><option value="212">212cm</option><option value="213">213cm</option>								</select>	
+													  
+							</div>  	
+							</div>
+							
+						
+							<!--- <div class="form-group" align="left"> -->
+						
+							  <label for="sel1">Weight :</label>
+						
+
+										<select th:feild="*{weight}" size="1" class="form-control" style="width:135px;" id="KGS">
+										<option value="0">- Kgs -</option>
+										<option value="41">41 kg</option><option value="42">42 kg</option><option value="43">43 kg</option><option value="44">44 kg</option><option value="45">45 kg</option><option value="46">46 kg</option><option value="47">47 kg</option><option value="48">48 kg</option><option value="49">49 kg</option><option value="50">50 kg</option><option value="51">51 kg</option><option value="52">52 kg</option><option value="53">53 kg</option><option value="54">54 kg</option><option value="55">55 kg</option><option value="56">56 kg</option><option value="57">57 kg</option><option value="58">58 kg</option><option value="59">59 kg</option><option value="60">60 kg</option><option value="61">61 kg</option><option value="62">62 kg</option><option value="63">63 kg</option><option value="64">64 kg</option><option value="65">65 kg</option><option value="66">66 kg</option><option value="67">67 kg</option><option value="68">68 kg</option><option value="69">69 kg</option><option value="70">70 kg</option><option value="71">71 kg</option><option value="72">72 kg</option><option value="73">73 kg</option><option value="74">74 kg</option><option value="75">75 kg</option><option value="76">76 kg</option><option value="77">77 kg</option><option value="78">78 kg</option><option value="79">79 kg</option><option value="80">80 kg</option><option value="81">81 kg</option><option value="82">82 kg</option><option value="83">83 kg</option><option value="84">84 kg</option><option value="85">85 kg</option><option value="86">86 kg</option><option value="87">87 kg</option><option value="88">88 kg</option><option value="89">89 kg</option><option value="90">90 kg</option><option value="91">91 kg</option><option value="92">92 kg</option><option value="93">93 kg</option><option value="94">94 kg</option><option value="95">95 kg</option><option value="96">96 kg</option><option value="97">97 kg</option><option value="98">98 kg</option><option value="99">99 kg</option><option value="100">100 kg</option><option value="101">101 kg</option><option value="102">102 kg</option><option value="103">103 kg</option><option value="104">104 kg</option><option value="105">105 kg</option><option value="106">106 kg</option><option value="107">107 kg</option><option value="108">108 kg</option><option value="109">109 kg</option><option value="110">110 kg</option><option value="111">111 kg</option><option value="112">112 kg</option><option value="113">113 kg</option><option value="114">114 kg</option><option value="115">115 kg</option><option value="116">116 kg</option><option value="117">117 kg</option><option value="118">118 kg</option><option value="119">119 kg</option><option value="120">120 kg</option><option value="121">121 kg</option><option value="122">122 kg</option><option value="123">123 kg</option><option value="124">124 kg</option><option value="125">125 kg</option><option value="126">126 kg</option><option value="127">127 kg</option><option value="128">128 kg</option><option value="129">129 kg</option><option value="130">130 kg</option><option value="131">131 kg</option><option value="132">132 kg</option><option value="133">133 kg</option><option value="134">134 kg</option><option value="135">135 kg</option><option value="136">136 kg</option><option value="137">137 kg</option><option value="138">138 kg</option><option value="139">139 kg</option><option value="140">140 kg</option>
+										</select>
+					  
+							<!--  </div> *** -->
+							   
+							   <div class="form-group" align="left">
+								<label for="usr">Body type :</label>
+								
+								<div class="radio">
+								
+								<label class="radio-inline"><input th:feild="*{bodytype}" id="BODY_TYPE3" value="3" type="radio" class="radiomargin" />Slim  </label>
+								<label class="radio-inline"><input th:feild="*{bodytype}" id="BODY_TYPE1" value="1" type="radio" class="radiomargin" checked="checked" />Average </label>
+								<label class="radio-inline"><input th:feild="*{bodytype}" id="BODY_TYPE2" value="2" type="radio" class="radiomargin" />Athletic </label>
+								<label class="radio-inline"><input th:feild="*{bodytype}" id="BODY_TYPE4" value="4" type="radio" class="radiomargin" />Heavy </label>
+					
+					
+								</div>
+							</div>	
+							
+							
+							<div class="form-group" align="left">
+								<label for="usr">Complexion :</label>
+								
+								<div class="radio">
+								
+								<label class="radio-inline"><input th:feild="*{complexion}" id="COMPLEXION2" value="1" type="radio" class="radiomargin" checked="checked" />Fair  </label>
+								<label class="radio-inline"><input th:feild="*{complexion}" id="COMPLEXION3" value="2" type="radio" class="radiomargin" />Wheatish </label>
+								<label class="radio-inline"><input th:feild="*{complexion}" id="COMPLEXION4" value="3" type="radio" class="radiomargin" />Wheatish brown</label>
+								<label class="radio-inline"><input th:feild="*{complexion}" id="COMPLEXION5" value="4" type="radio" class="radiomargin" />Dark </label>
+					
+					
+								</div>
+							</div>	
+							
+							<div class="form-group" align="left">
+								<label for="usr">Physical status * :</label>
+								
+								<div class="radio">
+								
+								<label class="radio-inline"><input th:feild="*{physicalstatus}" id="PHYSICAL_STATUS0" value="0" type="radio" class="radiomargin" checked="checked" />Normal  </label>
+								<label class="radio-inline"><input th:feild="*{physicalstatus}" id="PHYSICAL_STATUS1" value="1" type="radio" class="radiomargin" />Physically challenged </label>
+								
+					
+								</div>
+							</div>	
+							
+							<label for="sel1"><span class="style2">Education and Occupation</span></label>
+							 
+							 
+								
+							 <div class="form-group" align="left">
+							 
+							 <label for="sel1">Highest Education *	:</label>
+							 
+
+								<select th:feild="*{education}" id="EDUCATION" class="form-control" >
+										<option value="0">- Select -</option>								
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Engineering / Computers --'>
+										<option value='6'>Aeronautical Engineering</option>
+										<option value='8'>B.Arch</option>
+										<option value='5'>BCA</option>
+										<option value='49'>BE</option>
+										<option value='9'>B.Plan</option>
+										<option value='95'>B.Sc IT/ Computer Science</option>
+										<option value='50'>B.Tech.</option>
+										<option value='83'>Other Bachelor Degree in Engineering / Computers</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Engineering / Computers --'>
+										<option value='7'>M.Arch.</option>
+										<option value='51'>MCA</option>
+										<option value='53'>ME</option>
+										<option value='55'>M.Sc. IT / Computer Science</option>
+										<option value='3'>M.S.(Engg.)</option>
+										<option value='54'>M.Tech.</option>
+										<option value='52'>PGDCA</option>
+										<option value='84'>Other Masters Degree in Engineering / Computers</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Arts / Science / Commerce --'>
+										<option value='43'>Aviation Degree</option>
+										<option value='18'>B.A.</option>
+										<option value='16'>B.Com.</option>
+										<option value='39'>B.Ed.</option>
+										<option value='56'>BFA</option>
+										<option value='66'>BFT</option>
+										<option value='57'>BLIS</option>
+										<option value='59'>B.M.M.</option>
+										<option value='17'>B.Sc.</option>
+										<option value='58'>B.S.W</option>
+										<option value='15'>B.Phil.</option>
+										<option value='85'>Other Bachelor Degree in Arts / Science / Commerce</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Arts / Science / Commerce --'>
+										<option value='13'>M.A.</option>
+										<option value='11'>MCom</option>
+										<option value='38'>M.Ed.</option>
+										<option value='98'>MFA</option>
+										<option value='60'>MLIS</option>
+										<option value='12'>M.Sc.</option>
+										<option value='63'>MSW</option>
+										<option value='10'>M.Phil.</option>
+										<option value='86'>Other Master Degree in Arts / Science / Commerce</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Management --'>
+										<option value='35'>BBA</option>
+										<option value='65'>BFM (Financial Management)</option>
+										<option value='19'>BHM (Hotel Management)</option>
+										<option value='87'>Other Bachelor Degree in Management</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Management --'>
+										<option value='61'>MBA</option>
+										<option value='76'>MFM (Financial Management)</option>
+										<option value='14'>MHM  (Hotel Management)</option>
+										<option value='64'>MHRM (Human Resource Management)</option>
+										<option value='62'>PGDM</option>
+										<option value='96'>Other Master Degree in Management</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Medicine in General / Dental / Surgeon --'>
+										<option value='29'>B.A.M.S.</option>
+										<option value='25'>BDS</option>
+										<option value='28'>BHMS</option>
+										<option value='68'>BSMS</option>
+										<option value='31'>BPharm</option>
+										<option value='27'>BPT</option>
+										<option value='69'>BUMS</option>
+										<option value='26'>BVSc</option>
+										<option value='21'>MBBS</option>
+										<option value='101'>B.Sc. Nursing</option>
+										<option value='88'>Other Bachelor Degree in Medicine</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Medicine - General / Dental / Surgeon --'>
+										<option value='22'>MDS</option>
+										<option value='20'>MD / MS (Medical)</option>
+										<option value='30'>M.Pharm</option>
+										<option value='24'>MPT</option>
+										<option value='23'>MVSc</option>
+										<option value='97'>Other Master Degree in Medicine</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Legal --'>
+										<option value='72'>BGL</option>
+										<option value='73'>B.L.</option>
+										<option value='74'>LL.B.</option>
+										<option value='90'>Other Bachelor Degree in Legal</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Legal --'>
+										<option value='71'>LL.M.</option>
+										<option value='70'>M.L.</option>
+										<option value='89'>Other Master Degree in  Legal</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Financial Qualification - ICWAI / CA / CS/ CFA --'>
+										<option value='36'>CA</option>
+										<option value='75'>CFA (Chartered Financial Analyst)</option>
+										<option value='48'>CS</option>
+										<option value='37'>ICWA</option>
+										<option value='91'>Other Degree in Finance</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Service - IAS / IPS / IRS / IES / IFS  --'>
+										<option value='77'>IAS</option>
+										<option value='80'>IES</option>
+										<option value='81'>IFS</option>
+										<option value='79'>IRS</option>
+										<option value='78'>IPS</option>
+										<option value='92'>Other Degree in Service</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Ph.D. --'>
+										<option value='33'>Ph.D.</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Diploma --'>
+										<option value='46'>Diploma</option>
+										<option value='82'>Polytechnic</option>
+										<option value='45'>Trade School</option>
+										<option value='94'>Others in Diploma</option>
+										</optgroup>
+										<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Higher Secondary / Secondary --'>
+										<option value='47'>Higher Secondary School / High School</option>
+										</optgroup>
+									</select>
+															
+							</div>	
+							
+							<div class="form-group" align="left">
+								<label for="usr">Employed in * :</label>
+								
+								<div class="radio">
+								
+								<label class="radio-inline"><input th:feild="*{occupationcategory}"  id="OCCUPATIONCATEGORY1" value="1" type="radio" class="radiomargin" />Government  </label>
+								<label class="radio-inline"><input th:feild="*{occupationcategory}" id="OCCUPATIONCATEGORY3" value="3" type="radio" class="radiomargin" />Private </label>
+								<label class="radio-inline"><input th:feild="*{occupationcategory}" id="OCCUPATIONCATEGORY4" value="4" type="radio" class="radiomargin" />Business </label>
+								<label class="radio-inline"><input th:feild="*{occupationcategory}" id="OCCUPATIONCATEGORY2" value="2" type="radio" class="radiomargin" />Defence </label>
+								
+					
+								</div>
+							</div>	
+							
+							<div class="form-group" align="left">
+							 
+							 <label for="sel1">Occupation *	:</label>
+								
+								<select  th:feild="*{occupation}" id="OCCUPATION" class="form-control" >
+										
+										<option value="">Please choose one.</option>
+										<option value="Health Care">Health Care</option>
+										<option value="Justice System">Justice System</option>
+										<option value="Education">Education</option>
+										<option value="Social Work">Social Work</option>
+										<option value="Early Childhood Services/Care">Early Childhood Services/Care</option>
+										<option value="Faith Community">Faith Community</option>
+										<option value="Addiction">Addiction</option>
+										<option value="Advocacy/Policy">Advocacy/Policy</option>
+										<option value="Retired">Retired</option>
+										<option value="Other">Other</option>
+			
+									</select>
+							</div>		
+							<div class="form-inline" align="left">
+							<div class="form-group" align="left">
+							 
+							 <label for="sel1">Monthly Income :</label>
+								
+								<select style="width: 205px;" th:feild="*{incomecurrency}" id="INCOME_CURRENCY" class="form-control" >
+										<option selected="selected" value="">Select currency</option>
+										<option value="America (United States) Dollars - USD">America (United States) Dollars – USD</option>
+										<option value="Afghanistan Afghanis - AFN">Afghanistan Afghanis – AFN</option>
+										<option value="Albania Leke - ALL">Albania Leke – ALL</option>
+										<option value="Algeria Dinars - DZD">Algeria Dinars – DZD</option>
+										<option value="Argentina Pesos - ARS">Argentina Pesos – ARS</option>
+										<option value="Australia Dollars - AUD">Australia Dollars – AUD</option>
+										<option value="Austria Schillings - ATS">Austria Schillings – ATS</option>
+										 
+										<option value="Bahamas Dollars - BSD">Bahamas Dollars – BSD</option>
+										<option value="Bahrain Dinars - BHD">Bahrain Dinars – BHD</option>
+										<option value="Bangladesh Taka - BDT">Bangladesh Taka – BDT</option>
+										<option value="Barbados Dollars - BBD">Barbados Dollars – BBD</option>
+										<option value="Belgium Francs - BEF">Belgium Francs – BEF</option>
+										<option value="Bermuda Dollars - BMD">Bermuda Dollars – BMD</option>
+										 
+										<option value="Brazil Reais - BRL">Brazil Reais – BRL</option>
+										<option value="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
+										<option value="Canada Dollars - CAD">Canada Dollars – CAD</option>
+										<option value="CFA BCEAO Francs - XOF">CFA BCEAO Francs – XOF</option>
+										<option value="CFA BEAC Francs - XAF">CFA BEAC Francs – XAF</option>
+										<option value="Chile Pesos - CLP">Chile Pesos – CLP</option>
+										 
+										<option value="China Yuan Renminbi - CNY">China Yuan Renminbi – CNY</option>
+										<option value="RMB (China Yuan Renminbi) - CNY">RMB (China Yuan Renminbi) – CNY</option>
+										<option value="Colombia Pesos - COP">Colombia Pesos – COP</option>
+										<option value="CFP Francs - XPF">CFP Francs – XPF</option>
+										<option value="Costa Rica Colones - CRC">Costa Rica Colones – CRC</option>
+										<option value="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
+										 
+										<option value="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
+										<option value="Czech Republic Koruny - CZK">Czech Republic Koruny – CZK</option>
+										<option value="Denmark Kroner - DKK">Denmark Kroner – DKK</option>
+										<option value="Deutsche (Germany) Marks - DEM">Deutsche (Germany) Marks – DEM</option>
+										<option value="Dominican Republic Pesos - DOP">Dominican Republic Pesos – DOP</option>
+										<option value="Dutch (Netherlands) Guilders - NLG">Dutch (Netherlands) Guilders – NLG</option>
+										 
+										<option value="Eastern Caribbean Dollars - XCD">Eastern Caribbean Dollars – XCD</option>
+										<option value="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
+										<option value="Estonia Krooni - EEK">Estonia Krooni – EEK</option>
+										<option value="Euro - EUR">Euro – EUR</option>
+										<option value="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
+										<option value="Finland Markkaa - FIM">Finland Markkaa – FIM</option>
+										 
+										<option value="France Francs - FRF*">France Francs – FRF*</option>
+										<option value="Germany Deutsche Marks - DEM">Germany Deutsche Marks – DEM</option>
+										<option value="Gold Ounces - XAU">Gold Ounces – XAU</option>
+										<option value="Greece Drachmae - GRD">Greece Drachmae – GRD</option>
+										<option value="Guatemalan Quetzal - GTQ">Guatemalan Quetzal – GTQ</option>
+										<option value="Holland (Netherlands) Guilders - NLG">Holland (Netherlands) Guilders – NLG</option>
+										<option value="Hong Kong Dollars - HKD">Hong Kong Dollars – HKD</option>
+										 
+										<option value="Hungary Forint - HUF">Hungary Forint – HUF</option>
+										<option value="Iceland Kronur - ISK">Iceland Kronur – ISK</option>
+										<option value="IMF Special Drawing Right - XDR">IMF Special Drawing Right – XDR</option>
+										<option value="India Rupees - INR">India Rupees – INR</option>
+										<option value="Indonesia Rupiahs - IDR">Indonesia Rupiahs – IDR</option>
+										<option value="Iran Rials - IRR">Iran Rials – IRR</option>
+										 
+										<option value="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
+										<option value="Ireland Pounds - IEP*">Ireland Pounds – IEP*</option>
+										<option value="Israel New Shekels - ILS">Israel New Shekels – ILS</option>
+										<option value="Italy Lire - ITL*">Italy Lire – ITL*</option>
+										<option value="Jamaica Dollars - JMD">Jamaica Dollars – JMD</option>
+										<option value="Japan Yen - JPY">Japan Yen – JPY</option>
+										 
+										<option value="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
+										<option value="Kenya Shillings - KES">Kenya Shillings – KES</option>
+										<option value="Korea (South) Won - KRW">Korea (South) Won – KRW</option>
+										<option value="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
+										<option value="Lebanon Pounds - LBP">Lebanon Pounds – LBP</option>
+										<option value="Luxembourg Francs - LUF">Luxembourg Francs – LUF</option>
+										 
+										<option value="Malaysia Ringgits - MYR">Malaysia Ringgits – MYR</option>
+										<option value="Malta Liri - MTL">Malta Liri – MTL</option>
+										<option value="Mauritius Rupees - MUR">Mauritius Rupees – MUR</option>
+										<option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+										<option value="Morocco Dirhams - MAD">Morocco Dirhams – MAD</option>
+										<option value="Netherlands Guilders - NLG">Netherlands Guilders – NLG</option>
+										 
+										<option value="New Zealand Dollars - NZD">New Zealand Dollars – NZD</option>
+										<option value="Norway Kroner - NOK">Norway Kroner – NOK</option>
+										<option value="Oman Rials - OMR">Oman Rials – OMR</option>
+										<option value="Pakistan Rupees - PKR">Pakistan Rupees – PKR</option>
+										<option value="Palladium Ounces - XPD">Palladium Ounces – XPD</option>
+										<option value="Peru Nuevos Soles - PEN">Peru Nuevos Soles – PEN</option>
+										 
+										<option value="Philippines Pesos - PHP">Philippines Pesos – PHP</option>
+										<option value="Platinum Ounces - XPT">Platinum Ounces – XPT</option>
+										<option value="Poland Zlotych - PLN">Poland Zlotych – PLN</option>
+										<option value="Portugal Escudos - PTE">Portugal Escudos – PTE</option>
+										<option value="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
+										<option value="Romania New Lei - RON">Romania New Lei – RON</option>
+										 
+										<option value="Romania Lei - ROL">Romania Lei – ROL</option>
+										<option value="Russia Rubles - RUB">Russia Rubles – RUB</option>
+										<option value="Saudi Arabia Riyals - SAR">Saudi Arabia Riyals – SAR</option>
+										<option value="Silver Ounces - XAG">Silver Ounces – XAG</option>
+										<option value="Singapore Dollars - SGD">Singapore Dollars – SGD</option>
+										<option value="Slovakia Koruny - SKK">Slovakia Koruny – SKK</option>
+										 
+										<option value="Slovenia Tolars - SIT">Slovenia Tolars – SIT</option>
+										<option value="South Africa Rand - ZAR">South Africa Rand – ZAR</option>
+										<option value="South Korea Won - KRW">South Korea Won – KRW</option>
+										<option value="Spain Pesetas - ESP">Spain Pesetas – ESP</option>
+										<option value="Special Drawing Rights (IMF) - XDR">Special Drawing Rights (IMF) – XDR</option>
+										<option value="Sri Lanka Rupees - LKR">Sri Lanka Rupees – LKR</option>
+										 
+										<option value="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
+										<option value="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
+										<option value="Switzerland Francs - CHF">Switzerland Francs – CHF</option>
+										<option value="Taiwan New Dollars - TWD">Taiwan New Dollars – TWD</option>
+										<option value="Thailand Baht - THB">Thailand Baht – THB</option>
+										<option value="Trinidad and Tobago Dollars - TTD">Trinidad and Tobago Dollars – TTD</option>
+										 
+										<option value="Tunisia Dinars - TND">Tunisia Dinars – TND</option>
+										<option value="Turkey New Lira - TRY">Turkey New Lira – TRY</option>
+										<option value="United Arab Emirates Dirhams - AED">United Arab Emirates Dirhams – AED</option>
+										<option value="United Kingdom Pounds - GBP">United Kingdom Pounds – GBP</option>
+										<option value="United States Dollars - USD">United States Dollars – USD</option>
+										<option value="Venezuela Bolivares - VEB">Venezuela Bolivares – VEB</option>
+										 
+										<option value="Vietnam Dong - VND">Vietnam Dong – VND</option>
+										<option value="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
+										</select>
+										<input size="30" th:feild="*{income}" id="INCOME" type="text" placeholder="Enter Income"  maxlength="100"  style="width:150px;"/>
+							</div>			
+							</div>
+					  
+					
+					
+					<!--  <div class="form-group" align="left">   -->
+					
+								<label for="usr"><span class="style2">Habits</span></label>
+								
+								<label for="usr">Foods :</label>
+								<div class="radio">
+								
+									<label class="radio-inline"><input th:feild="*{eatinghabbits}" id="EATINGHABITS1" value="1" type="radio" class="radiomargin" checked="checked" />Vegetarian</label>
+									<label class="radio-inline"><input th:feild="*{eatinghabbits}" id="EATINGHABITS2" value="2" type="radio" class="radiomargin" />Non-Vegetarian</label>																		
+									<label class="radio-inline"><input th:feild="*{eatinghabbits}" id="EATINGHABITS3" value="3" type="radio" class="radiomargin" />Eggetarian</label>
+			
+								</div>
+								
+								<label for="usr">Smoking :</label>
+								<div class="radio">
+								
+									<label class="radio-inline"><input th:feild="*{smokinghabbits}" id="SMOKING_HABITS1" value="1" type="radio" class="radiomargin" checked="checked"/>No</label>
+									<label class="radio-inline"><input th:feild="*{smokinghabbits}" id="SMOKING_HABITS2" value="2" type="radio" class="radiomargin" />Occasionally</label>																		
+									<label class="radio-inline"><input th:feild="*{smokinghabbits}" id="SMOKING_HABITS3" value="3" type="radio" class="radiomargin" />Yes</label>
+			
+								</div>
+								
+								<label for="usr">Drinking :</label>
+								<div class="radio">
+								
+									<label class="radio-inline"><input th:feild="*{drinkinghabbits}" id="DRINKING_HABITS1" value="1" type="radio" class="radiomargin" checked="checked"/>No</label>
+									<label class="radio-inline"><input th:feild="*{drinkinghabbits}" id="DRINKING_HABITS2" value="2" type="radio" class="radiomargin" />Drinks Socially</label>																		
+									<label class="radio-inline"><input th:feild="*{drinkinghabbits}" id="DRINKING_HABITS3" value="3" type="radio" class="radiomargin" />Yes</label>
+			
+								</div>
+						<!-- 	</div> ***  -->	
+							
+							<div class="form-group" align="left">
+								
+								<label for="usr"><span class="style2">Astrological Info</span></label>
+								
+								You may not believe in horoscope matching, yet we recommend that you fill in your of Astro details as a lot members would be interested in these details.
+								
+								
+														
+								<label for="usr">Have Dosh? :</label>
+								<div class="radio">
+								
+									<label class="radio-inline"><input th:feild="*{manglik}" id="MANGLIK2" value="2" type="radio" class="radiomargin" checked="checked"/>No</label>
+									<label class="radio-inline"><input th:feild="*{manglik}" id="MANGLIK1" value="1" type="radio" class="radiomargin" />Yes</label>																		
+									<label class="radio-inline"><input th:feild="*{manglik}" id="MANGLIK3" value="3" type="radio" class="radiomargin" />Don't know</label>
+			
+								</div>
+								
+								 <label for="sel1">Star	:</label>
+								
+
+								
+								<select th:feild="*{star}" id="STAR" class="form-control" >
+										
+										<option value="0" selected="selected">- Please Select Star -</option>
+												<option style="" value="1">Aswini</option><option style="" value="2">Bharani</option><option style="" value="3">Kruthiga</option><option style="" value="4">Rohini</option><option style="" value="5">Mrigasira</option><option style="" value="6">Arudra</option><option style="" value="7">Punarvasu</option><option style="" value="8">Pushya</option><option style="" value="9">Asilesha</option><option style="" value="10">Magha</option><option style="" value="11">Poorvaphalguni</option><option style="" value="12">Uthiraphalguni</option><option style="" value="13">Hastha</option><option style="" value="14">Chitra</option><option style="" value="15">Swathi</option><option style="" value="16">Visaka</option><option style="" value="17">Anuradha</option><option style="" value="18">Jyeshta</option><option style="" value="19">Mula</option><option style="" value="20">Poorvashada</option><option style="" value="21">Uthrashada</option><option style="" value="22">Sravan</option><option style="" value="23">Dhanishta</option><option style="" value="24">Shatataraka</option><option style="" value="25">Poorvabhadra</option><option style="" value="26">Uthirabhadra</option><option style="" value="27">Revathi</option>			
+																			</select>			
+					
+								
+								 <label for="sel1">Raasi/moon sign :</label>
+								 <select th:feild="*{raasi}" id="RAASI" class="form-control" >
+								 <option selected="selected" value="">Select Raasi</option>
+								<option value="1">Mesha (Aries)</option>
+								<option value="2">Vrishabha (Taurus)</option>
+								<option value="3">Mithun (Gemini)</option>
+								<option value="4">Karka (Cancer)</option>
+								<option value="5">Simha / Sinh (Leo</option>
+								<option value="6">Kanya (Vigro)</option>
+								<option value="7">Tula (Libra)</option>
+								<option value="8">Vruschika (Scorpius)</option>
+								<option value="9">Dhanu (Sagittarius)</option>
+								<option value="10">Makar (Capricorn)</option>
+								<option value="11">Kumbha (Aquarius)</option>
+								<option value="12">Meena (Pisces)</option>
+							</select>
+					
+							
+							
+							
+						<!-- 	<div class="form-group" align="left">  -->
+							  
+								<label for="usr"><span class="style2">Family Profile</span></label>
+								
+								<label for="usr">Family status * :</label>
+								<div class="radio">
+								
+									<label class="radio-inline"><input th:feild="*{familystatus}" id="FAMILYSTATUS1" value="1" type="radio" class="radiomargin" checked="checked" />Middle class</label>
+									<label class="radio-inline"><input th:feild="*{familystatus}" id="FAMILYSTATUS2" value="2" type="radio" />Upper middle class</label>																		
+									<label class="radio-inline"><input th:feild="*{familystatus}" id="FAMILYSTATUS3" value="3" type="radio" />Rich</label>
+									<label class="radio-inline"><input th:feild="*{familystatus}" id="FAMILYSTATUS4" value="4" type="radio" />Affluent</label>
+			
+								</div>
+								
+								<label for="usr">Family type * :</label>
+								<div class="radio">
+								
+									<label class="radio-inline"><input th:feild="*{familytype}" id="FAMILYTYPE1" value="1" type="radio" class="radiomargin"  checked="checked" />Joint</label>
+									<label class="radio-inline"><input th:feild="*{familytype}" id="FAMILYTYPE2" value="2" type="radio" class="radiomargin" />Nuclear</label>																		
+											
+								</div>
+								
+								<label for="usr">Family values * :</label>
+								<div class="radio">
+								
+									<label class="radio-inline"><input th:feild="*{familyvalue}" id="FAMILYvalue1" value="1" type="radio" class="radiomargin" />Orthodox</label>
+									<label class="radio-inline"><input th:feild="*{familyvalue}" id="FAMILYvalue2" value="2" type="radio" class="radiomargin" checked="checked" />Traditional</label>																		
+									<label class="radio-inline"><input th:feild="*{familyvalue}" id="FAMILYvalue3" value="3" type="radio" class="radiomargin" />Moderate</label>
+									<label class="radio-inline"><input th:feild="*{familyvalue}" id="FAMILYvalue4" value="4" type="radio" class="radiomargin" />Liberal</label>
+			
+								</div>
+						 <!--   </div> ***  --> 	
+						
+						<div class="form-group" align="left">
+								
+								<label for="usr"><span class="style2">Something About You *</span></label>
+					
+								<label for="usr">Write about your personality, family background, education, profession and hobbies</label>
+						</div>						   
+								<textarea th:feild="*{personalinfo}" id="short-message" class="_textarea" maxlength="450"></textarea>
+								<p class="limit">limit: 450 characters</p>
+
+
+								<button type="submit" class="btn btn-primary btn-block" >Submit Form</button>
+						</div>	
+         
+	</form>
+	
+	
+	</div>
+    </div>
+    </div>
+    </div>
+    
+    <!-- This works. We need to set this as background -->
+<!--  <img  src="../static/images/indian-matrimony-business.jpg" th:src="@{images/indian-matrimony-business.jpg}" style="width:100%"/>  -->     
+  	 </div>
+    <!--/Intro content-->
+</div>
+<!--/.Mask-->
+</div>
+    
+<style>
+#container1 {
+    background-color: #e2dada;
+}
+
+.centered-form {
+    margin-top: 90px;
+    margin-bottom: 0px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+</style>
+    
+    
+    
+     <!-- This works. We need to set this as background -->
+     
+          
+       
+	
+   <!--   </div> -->
+    <!--/Intro content-->
+<!-- </div>  -->
+<!--/.Mask-->
+
+	<script lang="javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	  <script src="js/counter.js"></script>
+		<script>
+
+			$(document).ready(function (){
+				'use strict';
+			
+				// works on one field
+		  $('textarea, ._textfield').countChar();
+			});
+		</script><script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-36251023-1']);
+	  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+</body>
+</html>

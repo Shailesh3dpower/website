@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+	<title>Basic Preferences</title>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+   	<link rel="stylesheet" href="css/bootstrap.min.css"/>    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+	<script src="http://iamrohit.in/lab/js/location.js"></script>
+	
+	<script lang="javascript" src="js/jquery-1.12.4.min.js"></script>
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/multi-select.css" />
+	
+	<link href="css/index.css" rel="stylesheet" />
+	<style>
+	   
+	html,
+	body,
+	.view {
+	   height: 100%;
+	   font-size:14px; 	 
+	}
+
+	.view {
+	   background: "" no-repeat center center fixed;
+	   -webkit-background-size: cover;
+	   -moz-background-size: cover;
+	   -o-background-size: cover;
+	   background-size: cover;
+	}
+	   
+	  
+	</style>
+	<style>
+	   body{
+	     <!--  background: url{[[@{image/indian-matrimony-business.jpg}]]}
+	                   no-repeat center center fixed; -->
+	   }
+	.style2 {color: #00CC00}
+	
+	/*  Change .navbar to orange clor */
+	
+	.navbar {
+		color: #000000;
+		background-color: orange;
+
+		
+	}
+	
+	
+	.nav {
+		color: #000000;
+		background-color: orange;
+
+	}
+	
+	#ntext{
+	 color: #FFFFFF;
+	  }
+	
+	/*  .nva to orange clor */
+
+
+	.navbar-nav {
+	width: 100%;
+	text-align: center;
+
+	}
+	.navbar-nav > li {
+	float: none;
+	display: inline-block;
+	}
+
+	.navbar-right {
+	width: 100%;
+	text-align: right;
+	padding-right:70px;
+	}
+	.navbar-nav > li {
+	float: none;
+	display: inline-block;
+	}
+
+	.glyphicon {
+	   font-size: 30px;
+	}
+	
+	.panel-default {
+	 width: 780px;
+	}
+
+	#footer {
+	 height: 100px;
+	 background-color: #CCCCCC;
+	 color:#000000;
+
+	}
+
+	</style>
+	
+	<style>
+				#container1 {
+				background-color: #e2dada;
+				}
+
+				.centered-form {
+				margin-top: 90px;
+				margin-bottom: 0px;
+				}
+
+				.centered-form .panel {
+				background: rgba(255, 255, 255, 0.8);
+				box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+				}
+	</style>
+</head>
+<body>
+	<!-- Navigation -->
+	
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="navbar-header" style="margin-bottom:90px;">
+					<button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar">
+					<ul class="nav navbar-nav  disabled">
+						<li class="active"><img src="../static/images/logo.png" th:src="@{images/logo.png}"></img></li>
+						<li>
+							<a  id="ntext" href="#">Home</a>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle disabled"  id="ntext" data-toggle="dropdown" href="#">My Profile<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Who Viewed my Profile</a>
+								</li>
+								<li>
+									<a href="#">Who Shortlisted Me</a>
+								</li>
+								<li>
+									<a href="#">Who Viewed my Mobile no</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle disabled" id="ntext" data-toggle="dropdown" href="#">Search<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Regular Search</a>
+								</li>
+								<li>
+									<a href="#">Advanced Search</a>
+								</li>
+								<li>
+									<a href="#">Search By Date</a>
+								</li>
+								<li>
+									<a href="#">Keyword Search</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle disabled" id="ntext" data-toggle="dropdown" href="#">Matches<span class="caret"></span></a>
+							<ul class="dropdown-menu disabled">
+								<li>
+									<a href="#">New Matches</a>
+								</li>
+								<li>
+									<a href="#">Yet to be Viewed</a>
+								</li>
+								<li>
+									<a href="#">Shortlisted</a>
+								</li>
+								<li>
+									<a href="#">Mutual Matches</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="disabled" id="ntext" href="#">Upgrade</a>
+						</li>
+
+						<li>
+							<a href="home.html" id="ntext" class="disabled"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;&nbsp; Logout</a>
+						</li>
+						
+						<!--<ul class="nav navbar-nav navbar-right disabled">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>-->
+					</ul>
+
+
+
+				</div>
+				</div>
+</div>
+</nav> <!--Mask-->
+	<div class="view">
+		<!--Intro content-->
+		<div class="full-bg-img flex-center">
+			<div class="row centered-form">
+				<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+					<div style="margin-top:30px;"></div>
+					<div class="panel panel-default">
+							<img src="../static/reg-2pg-header-f.jpg" th:src="@{images/reg-2pg-header-f.jpg}" style="width:100%"></img>
+						<div class="panel-heading">
+							<h3 class="panel-title text-center" style="font-size:28px;"><strong>Basic Preferences</strong></h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<form name="testform" align="Center" class="AdvancedForm" th:action="@{/preferences}" th:object="${preferences}" enctype="multipart/form-data"  method="post">
+									<div align="left" class="form-group">
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="usr">Preferred Age :</label></div>
+
+											<div class="col-sm-8"><div align="left" class="form-inline">
+												<label for="sel1">From</label> 
+												
+												<select name="minAge" th:feild="*{minAge}"  id="fromage"  class="selectfield select hdtxt" style="width:117px;padding:3px 15px 7px 5px;height:30px;background-position:90% 11px;" >
+											<option value="0">From</option>
+                                           
+                                            <option value="18">18</option>
+                                           
+                                            <option value="19">19</option>
+                                           
+                                            <option value="20" selected="selected">20</option>
+                                           
+                                            <option value="21">21</option>
+                                           
+                                            <option value="22">22</option>
+                                           
+                                            <option value="23">23</option>
+                                           
+                                            <option value="24">24</option>
+                                           
+                                            <option value="25">25</option>
+                                           
+                                            <option value="26">26</option>
+                                           
+                                            <option value="27">27</option>
+                                           
+                                            <option value="28">28</option>
+                                           
+                                            <option value="29">29</option>
+                                           
+                                            <option value="30">30</option>
+                                           
+                                            <option value="31">31</option>
+                                           
+                                            <option value="32">32</option>
+                                           
+                                            <option value="33">33</option>
+                                           
+                                            <option value="34">34</option>
+                                           
+                                            <option value="35">35</option>
+                                           
+                                            <option value="36">36</option>
+                                           
+                                            <option value="37">37</option>
+                                           
+                                            <option value="38">38</option>
+                                           
+                                            <option value="39">39</option>
+                                           
+                                            <option value="40">40</option>
+                                           
+                                            <option value="41">41</option>
+                                           
+                                            <option value="42">42</option>
+                                           
+                                            <option value="43">43</option>
+                                           
+                                            <option value="44">44</option>
+                                           
+                                            <option value="45">45</option>
+                                           
+                                            <option value="46">46</option>
+                                           
+                                            <option value="47">47</option>
+                                           
+                                            <option value="48">48</option>
+                                           
+                                            <option value="49">49</option>
+                                           
+                                            <option value="50">50</option>
+                                           
+                                            <option value="51">51</option>
+                                           
+                                            <option value="52">52</option>
+                                           
+                                            <option value="53">53</option>
+                                           
+                                            <option value="54">54</option>
+                                           
+                                            <option value="55">55</option>
+                                           
+                                            <option value="56">56</option>
+                                           
+                                            <option value="57">57</option>
+                                           
+                                            <option value="58">58</option>
+                                           
+                                            <option value="59">59</option>
+                                           
+                                            <option value="60">60</option>
+                                           
+                                            <option value="61">61</option>
+                                           
+                                            <option value="62">62</option>
+                                           
+                                            <option value="63">63</option>
+                                           
+                                            <option value="64">64</option>
+                                           
+                                            <option value="65">65</option>
+                                           
+                                            <option value="66">66</option>
+                                           
+                                            <option value="67">67</option>
+                                           
+                                            <option value="68" style="display: none;">68</option>
+                                           
+                                            <option value="69" style="display: none;">69</option>
+                                           
+                                            <option value="70" style="display: none;">70</option>		
+									</select>  &nbsp;to&nbsp;
+								
+								<select name="maxAge" th:feild="*{maxAge}"  id="toage" class="selectfield select hdtxt" style="width:117px;padding:3px 15px 7px 5px;height:30px;background-position:90% 11px;">
+											<option value="0">From</option>
+											<option value="23">23</option>
+                                                                                    <option value="24">24</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="26">26</option>
+                                                                                    <option value="27" selected="selected">27</option>
+                                                                                    <option value="28">28</option>
+                                                                                    <option value="29">29</option>
+                                                                                    <option value="30">30</option>
+                                                                                    <option value="31">31</option>
+                                                                                    <option value="32">32</option>
+                                                                                    <option value="33">33</option>
+                                                                                    <option value="34">34</option>
+                                                                                    <option value="35">35</option>
+                                                                                    <option value="36">36</option>
+                                                                                    <option value="37">37</option>
+                                                                                    <option value="38">38</option>
+                                                                                    <option value="39">39</option>
+                                                                                    <option value="40">40</option>
+                                                                                    <option value="41">41</option>
+                                                                                    <option value="42">42</option>
+                                                                                    <option value="43">43</option>
+                                                                                    <option value="44">44</option>
+                                                                                    <option value="45">45</option>
+                                                                                    <option value="46">46</option>
+                                                                                    <option value="47">47</option>
+                                                                                    <option value="48">48</option>
+                                                                                    <option value="49">49</option>
+                                                                                    <option value="50">50</option>
+                                                                                    <option value="51">51</option>
+                                                                                    <option value="52">52</option>
+                                                                                    <option value="53">53</option>
+                                                                                    <option value="54">54</option>
+                                                                                    <option value="55">55</option>
+                                                                                    <option value="56">56</option>
+                                                                                    <option value="57">57</option>
+                                                                                    <option value="58">58</option>
+                                                                                    <option value="59">59</option>
+                                                                                    <option value="60">60</option>
+                                                                                    <option value="61">61</option>
+                                                                                    <option value="62">62</option>
+                                                                                    <option value="63">63</option>
+                                                                                    <option value="64">64</option>
+                                                                                    <option value="65">65</option>
+                                                                                    <option value="66">66</option>
+                                                                                    <option value="67">67</option>
+                                                                                    <option value="68">68</option>
+                                                                                    <option value="69">69</option>
+                                                                                    <option value="70">70</option>
+																				</select>  	
+
+											</div>
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="usr">Marital Status :</label></div>
+											<div class="col-sm-8">
+											<input name="maritalStatus"  th:feild="*{maritalStatus}"   id="MARITAL_STATUS1" value="Any" type="checkbox" class="" /> Any
+											<input name="maritalStatus" th:feild="*{maritalStatus}"  id="MARITAL_STATUS2" value="Never Married" type="checkbox" class="radiomargin" checked="" /> Never Married
+											<input name="maritalStatus" th:feild="*{maritalStatus}"  id="MARITAL_STATUS3" value="Widowed" type="checkbox" class="radiomargin" /> Widowed
+											<input name="maritalStatus" th:feild="*{maritalStatus}"  id="MARITAL_STATUS4" value="Divorced" type="checkbox" class="radiomargin" /> Divorced
+											<input name="maritalStatus" th:feild="*{maritalStatus}"  id="MARITAL_STATUS5" value="Awaiting divorce" type="checkbox" class="radiomargin" /> Awaiting divorce
+									
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+																				
+										<div align="left" class="form-group">
+										<div class="col-sm-4"><label for="sel1">Have Children :</label></div>
+											<div class="col-sm-8">
+											  <input type="radio" name="havechildren" th:feild="*{havechildren}" id="HAVECHILDREN1" value="Doesn't matter"  /> Doesn't matter
+											  <input type="radio" name="havechildren" th:feild="*{havechildren}" id="HAVECHILDREN2" value="Yes. living together" /> Yes. living together
+											  <input type="radio" name="havechildren" th:feild="*{havechildren}" id="HAVECHILDREN3" value="Yes. not living together" /> Yes. not living together
+											  <input type="radio" name="havechildren" th:feild="*{havechildren}" id="HAVECHILDREN4" value="No" checked="" /> No
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="usr">Physical Status :</label></div>
+											<div class="col-sm-8">
+											<input type="radio" name="physicalStatus" th:feild="*{physicalStatus}" id="PHYSICALSTATUS1" value="Normal"  checked=""/> Normal
+											<input type="radio" name="physicalStatus" th:feild="*{physicalStatus}" id="PHYSICALSTATUS2" value="Physically challenged" /> Physically challenged
+											<input type="radio" name="physicalStatus" th:feild="*{physicalStatus}" id="PHYSICALSTATUS3" value="Doesn't matter" /> Doesn't matter
+										</div>
+										</div>
+																				
+										<div><p>&nbsp;</p></div>
+										
+									 	<div align="left" class="form-group" style="margin-top:30px;">
+											 <div class="col-sm-4"><label for="sel1">Height :</label></div>
+											 <div class="col-sm-8">
+								<select name="fromfeet" th:feild="*{fromfeet}" size="1" class="selectfield select hdtxt" style="width:117px;padding:3px 15px 7px 5px;height:30px;background-position:90% 11px;" id="FEETFROM" onchange="feetToCms(this.value,this.id)" >
+                                        <option value="0" selected="selected">- Feet/Inches -</option>
+                                        <option value="4-6">4ft 6in</option><option value="4-7">4ft 7in</option><option value="4-8">4ft 8in</option><option value="4-9">4ft 9in</option><option value="4-10">4ft 10in</option><option value="4-11">4ft 11in</option><option value="5-0">5ft</option><option value="5-1">5ft 1in</option><option value="5-2">5ft 2in</option><option value="5-3">5ft 3in</option><option value="5-4">5ft 4in</option><option value="5-5">5ft 5in</option><option value="5-6">5ft 6in</option><option value="5-7">5ft 7in</option><option value="5-8">5ft 8in</option><option value="5-9">5ft 9in</option><option value="5-10">5ft 10in</option><option value="5-11">5ft 11in</option><option value="6-0">6ft</option><option value="6-1">6ft 1in</option><option value="6-2">6ft 2in</option><option value="6-3">6ft 3in</option><option value="6-4">6ft 4in</option><option value="6-5">6ft 5in</option><option value="6-6">6ft 6in</option><option value="6-7">6ft 7in</option><option value="6-8">6ft 8in</option><option value="6-9">6ft 9in</option><option value="6-10">6ft 10in</option><option value="6-11">6ft 11in</option><option value="7-0">7ft</option>                                    </select>&nbsp;Or&nbsp;
+									
+                                    <select name="TOFEET" th:feild="*{tofeet}" size="1" class="selectfield select hdtxt" style="width:117px;padding:3px 15px 7px 5px;height:30px;background-position:93% 11px;" id="CMSFROM" onchange="cmsToFeet(this.value,this.id)" >
+                                       <option value="0">- Cms -</option>
+										<option value="137">137cm</option><option value="138">138cm</option><option value="139">139cm</option><option value="140">140cm</option><option value="141">141cm</option><option value="142">142cm</option><option value="143">143cm</option><option value="144">144cm</option><option value="145">145cm</option><option value="146">146cm</option><option value="147">147cm</option><option value="148">148cm</option><option value="149">149cm</option><option value="150">150cm</option><option value="151">151cm</option><option value="152">152cm</option><option value="153">153cm</option><option value="154">154cm</option><option value="155">155cm</option><option value="156">156cm</option><option value="157">157cm</option><option value="158">158cm</option><option value="159">159cm</option><option value="160">160cm</option><option value="161">161cm</option><option value="162">162cm</option><option value="163">163cm</option><option value="164">164cm</option><option value="165">165cm</option><option value="166">166cm</option><option value="167">167cm</option><option value="168">168cm</option><option value="169">169cm</option><option value="170">170cm</option><option value="171">171cm</option><option value="172">172cm</option><option value="173">173cm</option><option value="174">174cm</option><option value="175">175cm</option><option value="176">176cm</option><option value="177">177cm</option><option value="178">178cm</option><option value="179">179cm</option><option value="180">180cm</option><option value="181">181cm</option><option value="182">182cm</option><option value="183">183cm</option><option value="184">184cm</option><option value="185">185cm</option><option value="186">186cm</option><option value="187">187cm</option><option value="188">188cm</option><option value="189">189cm</option><option value="190">190cm</option><option value="191">191cm</option><option value="192">192cm</option><option value="193">193cm</option><option value="194">194cm</option><option value="195">195cm</option><option value="196">196cm</option><option value="197">197cm</option><option value="198">198cm</option><option value="199">199cm</option><option value="200">200cm</option><option value="201">201cm</option><option value="202">202cm</option><option value="203">203cm</option><option value="204">204cm</option><option value="205">205cm</option><option value="206">206cm</option><option value="207">207cm</option><option value="208">208cm</option><option value="209">209cm</option><option value="210">210cm</option><option value="211">211cm</option><option value="212">212cm</option><option value="213">213cm</option>      </select>
+															&nbsp;To&nbsp;
+										<select name="fromfeet" th:feild="*{fromfeet}" size="1" class="selectfield select hdtxt" style="width:117px;padding:3px 15px 7px 5px;height:30px;background-position:90% 11px;" id="FEETTO" onchange="feetToCms(this.value,this.id)" >
+                                        <option value="0" selected="selected">- Feet/Inches -</option>
+                                        <option value="4-6">4ft 6in</option><option value="4-7">4ft 7in</option><option value="4-8">4ft 8in</option><option value="4-9">4ft 9in</option><option value="4-10">4ft 10in</option><option value="4-11">4ft 11in</option><option value="5-0">5ft</option><option value="5-1">5ft 1in</option><option value="5-2">5ft 2in</option><option value="5-3">5ft 3in</option><option value="5-4">5ft 4in</option><option value="5-5">5ft 5in</option><option value="5-6">5ft 6in</option><option value="5-7">5ft 7in</option><option value="5-8">5ft 8in</option><option value="5-9">5ft 9in</option><option value="5-10">5ft 10in</option><option value="5-11">5ft 11in</option><option value="6-0">6ft</option><option value="6-1">6ft 1in</option><option value="6-2">6ft 2in</option><option value="6-3">6ft 3in</option><option value="6-4">6ft 4in</option><option value="6-5">6ft 5in</option><option value="6-6">6ft 6in</option><option value="6-7">6ft 7in</option><option value="6-8">6ft 8in</option><option value="6-9">6ft 9in</option><option value="6-10">6ft 10in</option><option value="6-11">6ft 11in</option><option value="7-0">7ft</option>                                    </select>&nbsp;Or&nbsp;
+									
+                                    <select name="TOFEET" th:feild="*{tofeet}" size="1" class="selectfield select hdtxt" style="width:117px;padding:3px 15px 7px 5px;height:30px;background-position:93% 11px;" id="CMSTO" onchange="cmsToFeet(this.value,this.id)" >
+                                       <option value="0">- Cms -</option>
+										<option value="137">137cm</option><option value="138">138cm</option><option value="139">139cm</option><option value="140">140cm</option><option value="141">141cm</option><option value="142">142cm</option><option value="143">143cm</option><option value="144">144cm</option><option value="145">145cm</option><option value="146">146cm</option><option value="147">147cm</option><option value="148">148cm</option><option value="149">149cm</option><option value="150">150cm</option><option value="151">151cm</option><option value="152">152cm</option><option value="153">153cm</option><option value="154">154cm</option><option value="155">155cm</option><option value="156">156cm</option><option value="157">157cm</option><option value="158">158cm</option><option value="159">159cm</option><option value="160">160cm</option><option value="161">161cm</option><option value="162">162cm</option><option value="163">163cm</option><option value="164">164cm</option><option value="165">165cm</option><option value="166">166cm</option><option value="167">167cm</option><option value="168">168cm</option><option value="169">169cm</option><option value="170">170cm</option><option value="171">171cm</option><option value="172">172cm</option><option value="173">173cm</option><option value="174">174cm</option><option value="175">175cm</option><option value="176">176cm</option><option value="177">177cm</option><option value="178">178cm</option><option value="179">179cm</option><option value="180">180cm</option><option value="181">181cm</option><option value="182">182cm</option><option value="183">183cm</option><option value="184">184cm</option><option value="185">185cm</option><option value="186">186cm</option><option value="187">187cm</option><option value="188">188cm</option><option value="189">189cm</option><option value="190">190cm</option><option value="191">191cm</option><option value="192">192cm</option><option value="193">193cm</option><option value="194">194cm</option><option value="195">195cm</option><option value="196">196cm</option><option value="197">197cm</option><option value="198">198cm</option><option value="199">199cm</option><option value="200">200cm</option><option value="201">201cm</option><option value="202">202cm</option><option value="203">203cm</option><option value="204">204cm</option><option value="205">205cm</option><option value="206">206cm</option><option value="207">207cm</option><option value="208">208cm</option><option value="209">209cm</option><option value="210">210cm</option><option value="211">211cm</option><option value="212">212cm</option><option value="213">213cm</option>      </select>					
+															
+										</div>
+										</div>   
+										
+								<div><p>&nbsp;</p></div>
+										
+							 <div class="col-sm-4"><label for="sel1">Eating Habits :</label></div>
+							 <div class="col-sm-8">
+							<div class="form-group" align="left">
+							   <input type="checkbox" name="eatingHabits" th:feild="*{eatingHabits}" id="EATINGHABITS1" value="Vegetarian" checked="" /> Vegetarian
+							   <input type="checkbox" name="eatingHabits" th:feild="*{eatingHabits}" id="EATINGHABITS2" value="Non Vegetarian" /> Non Vegetarian
+							   <input type="checkbox" name="eatingHabits" th:feild="*{eatingHabits}" id="EATINGHABITS3" value="Eggetarian" />Eggetarian
+							   <input type="checkbox" name="eatingHabits" th:feild="*{eatingHabits}" id="EATINGHABITS4" value="Doesn't matter"  /> Doesn't matter  
+							    	
+							</div>
+							</div>
+							
+							<div><p>&nbsp;</p></div>
+							
+							<div class="col-sm-4"><label for="sel1">Drinking Habits :</label> </div>
+							<div class="col-sm-8">
+							<div class="form-group" align="left">
+							<input type="checkbox" name="drinkingHabits" th:feild="*{drinkingHabits}" id="DRINKING2" value="Never drinks" checked="" /> Never drinks 
+							<input type="checkbox" name="drinkingHabits" th:feild="*{drinkingHabits}" id="DRINKING3" value="Drinks socially" /> Drinks socially
+							<input type="checkbox" name="drinkingHabits" th:feild="*{drinkingHabits}" id="DRINKING4" value="Drinks regularly" /> Drinks regularly
+							<input type="checkbox" name="drinkingHabits" th:feild="*{drinkingHabits}" id="DRINKING1" value="Doesn't matter"  /> Doesn't matter
+					  		</div>
+							</div>
+							   
+							 <div><p>&nbsp;</p></div>
+							   
+								<div class="col-sm-4"><label for="usr">Smoking Habits :</label></div>
+								<div class="col-sm-8">
+								
+								<div class="form-group" align="left">
+								<input type="checkbox" name="smokingHabits" th:feild="*{smokingHabits}" id="SMOKING2" value="Never smokes" checked="" /> Never smokes
+								<input type="checkbox" name="smokingHabits" th:feild="*{smokingHabits}" id="SMOKING3" value="Smokes occasionally" />Occasionally
+								<input type="checkbox" name="smokingHabits" th:feild="*{smokingHabits}" id="SMOKING4" value=" Smokes regularly" /> Regularly
+								<input type="checkbox" name="smokingHabits" th:feild="*{smokingHabits}" id="SMOKING1" value="Doesn't matter"  /> Doesn't matter
+								</div>
+								</div>
+								
+								<p>&nbsp;</p>
+								
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="sel1">Highest Education * :</label> </div>
+											<div class="col-sm-8">
+											
+											<select name="education" th:feild="*{education}" class="education" id="pre-selected-options" multiple="multiple">
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Engineering / Computers --'>
+											<option value='Aeronautical Engineering'>Aeronautical Engineering</option>
+											<option value='B.Arch'>B.Arch</option>
+											<option value='BCA'>BCA</option>
+											<option value='BE'>BE</option>
+											<option value='B.Plan'>B.Plan</option>
+											<option value='B.Sc IT/ Computer Science'>B.Sc IT/ Computer Science</option>
+											<option value='B.Tech.'>B.Tech.</option>
+											<option value='Other Bachelor Degree in Engineering / Computers'>Other Bachelor Degree in Engineering / Computers</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Engineering / Computers --'>
+											<option value='M.Arch.'>M.Arch.</option>
+											<option value='MCA'>MCA</option>
+											<option value='ME'>ME</option>
+											<option value='M.Sc. IT / Computer Science'>M.Sc. IT / Computer Science</option>
+											<option value='M.S.(Engg.)'>M.S.(Engg.)</option>
+											<option value='M.Tech.'>M.Tech.</option>
+											<option value='PGDCA'>PGDCA</option>
+											<option value='Other Masters Degree in Engineering / Computers'>Other Masters Degree in Engineering / Computers</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Arts / Science / Commerce --'>
+											<option value='Aviation Degree'>Aviation Degree</option>
+											<option value='B.A.'>B.A.</option>
+											<option value='B.Com.'>B.Com.</option>
+											<option value='B.Ed.'>B.Ed.</option>
+											<option value='BFA'>BFA</option>
+											<option value='BFT'>BFT</option>
+											<option value='BLIS'>BLIS</option>
+											<option value='B.M.M.'>B.M.M.</option>
+											<option value='B.Sc.'>B.Sc.</option>
+											<option value='B.S.W'>B.S.W</option>
+											<option value='B.Phil.'>B.Phil.</option>
+											<option value='Other Bachelor Degree in Arts / Science / Commerce'>Other Bachelor Degree in Arts / Science / Commerce</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Arts / Science / Commerce --'>
+											<option value='M.A.'>M.A.</option>
+											<option value='M.Com.'>M.Com.</option>
+											<option value='M.Ed.'>M.Ed.</option>
+											<option value='MFA'>MFA</option>
+											<option value='MLIS'>MLIS</option>
+											<option value='M.Sc.'>M.Sc.</option>
+											<option value='MSW'>MSW</option>
+											<option value='M.Phil.'>M.Phil.</option>
+											<option value='Other Master Degree in Arts / Science / Commerce'>Other Master Degree in Arts / Science / Commerce</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Management --'>
+											<option value='BBA'>BBA</option>
+											<option value='BFM (Financial Management)'>BFM (Financial Management)</option>
+											<option value='BHM (Hotel Management)'>BHM (Hotel Management)</option>
+											<option value='Other Bachelor Degree in Management'>Other Bachelor Degree in Management</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Management --'>
+											<option value='MBA'>MBA</option>
+											<option value='MFM (Financial Management)'>MFM (Financial Management)</option>
+											<option value='MHM  (Hotel Management)'>MHM  (Hotel Management)</option>
+											<option value='MHRM (Human Resource Management)'>MHRM (Human Resource Management)</option>
+											<option value='PGDM'>PGDM</option>
+											<option value='Other Master Degree in Management'>Other Master Degree in Management</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Medicine in General / Dental / Surgeon --'>
+											<option value='B.A.M.S.'>B.A.M.S.</option>
+											<option value='BDS'>BDS</option>
+											<option value='BHMS'>BHMS</option>
+											<option value='BSMS'>BSMS</option>
+											<option value='B.Pharm'>B.Pharm</option>
+											<option value='BPT'>BPT</option>
+											<option value='BUMS'>BUMS</option>
+											<option value='BVSc'>BVSc</option>
+											<option value='MBBS'>MBBS</option>
+											<option value='B.Sc. Nursing'>B.Sc. Nursing</option>
+											<option value='Other Bachelor Degree in Medicine'>Other Bachelor Degree in Medicine</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Medicine - General / Dental / Surgeon --'>
+											<option value='MDS'>MDS</option>
+											<option value='MD / MS (Medical)'>MD / MS (Medical)</option>
+											<option value='M.Pharm'>M.Pharm</option>
+											<option value='MPT'>MPT</option>
+											<option value='MVSc'>MVSc</option>
+											<option value='Other Master Degree in Medicine'>Other Master Degree in Medicine</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Bachelors in Legal --'>
+											<option value='BGL'>BGL</option>
+											<option value='B.L.'>B.L.</option>
+											<option value='L.L.B.'>L.L.B.</option>
+											<option value='Other Bachelor Degree in Legal'>Other Bachelor Degree in Legal</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Masters in Legal --'>
+											<option value='L.L.M.'>L.L.M.</option>
+											<option value='M.L.'>M.L.</option>
+											<option value='Other Master Degree in  Legal'>Other Master Degree in  Legal</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Financial Qualification - ICWAI / CA / CS/ CFA --'>
+											<option value='CA'>CA</option>
+											<option value='CFA (Chartered Financial Analyst)'>CFA (Chartered Financial Analyst)</option>
+											<option value='CS'>CS</option>
+											<option value='ICWA'>ICWA</option>
+											<option value='Other Degree in Finance'>Other Degree in Finance</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Service - IAS / IPS / IRS / IES / IFS  --'>
+											<option value='IAS'>IAS</option>
+											<option value='IES'>IES</option>
+											<option value='IFS'>IFS</option>
+											<option value='IRS'>IRS</option>
+											<option value='IPS'>IPS</option>
+											<option value='Other Degree in Service'>Other Degree in Service</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Ph.D. --'>
+											<option value='Ph.D.'>Ph.D.</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Any Diploma --'>
+											<option value='Diploma'>Diploma</option>
+											<option value='Polytechnic'>Polytechnic</option>
+											<option value='Trade School'>Trade School</option>
+											<option value='Others in Diploma'>Others in Diploma</option>
+											</optgroup>
+											<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- Higher Secondary / Secondary --'>
+											<option value='Higher Secondary School / High School'>Higher Secondary School / High School</option>
+											</optgroup>
+										</select>	
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="usr">Employed in&nbsp;* :</label></div>
+											
+											<div class="col-sm-8">
+											<div class="radio">
+												
+												
+												<label class="radio-inline"><input name="occupationcategory" th:feild="*{occupationcategory}"  id="OCCUPATIONCATEGORY1" value="Government" type="radio" class="radiomargin" />Government  </label>
+												<label class="radio-inline"><input name="occupationcategory" th:feild="*{occupationcategory}" id="OCCUPATIONCATEGORY3" value="Private" type="radio" class="radiomargin" />Private </label>
+												<label class="radio-inline"><input name="occupationcategory" th:feild="*{occupationcategory}" id="OCCUPATIONCATEGORY4" value="Business" type="radio" class="radiomargin" />Business </label>
+												<label class="radio-inline"><input name="occupationcategory" th:feild="*{occupationcategory}" id="OCCUPATIONCATEGORY2" value="Defence" type="radio" class="radiomargin" />Defence </label>
+											</div>
+											</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="sel1">Occupation * :</label></div>
+											<div class="col-sm-8">
+																
+											
+											<select name="occupation" th:feild="*{occupation}" id="OCCUPATION" class="form-control" >
+										
+												<option value="">Please choose one.</option>
+												
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- ADMIN --'>
+												<option value="Manager">Manager</option>
+												<option value="Supervisor">Supervisor</option>
+												<option value="Officer">Officer</option>
+												<option value="Administrative Professional">Administrative Professional</option>
+												<option value="Executive">Executive</option>
+												<option value="Clerk">Clerk</option>
+												<option value="Human Resources Professional">Human Resources Professional</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- AGRICULTURE --'>
+												<option value="Agriculture and Farming Professional">Agriculture and Farming Professional</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- AIRLINE --'>
+												<option value="Pilot">Pilot</option>
+												<option value="Air Hostess">Air Hostess</option>
+												<option value="Airline Professional">Airline Professional</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- ARCHITECT AND DESIGN --'>
+												<option value="Architect">Architect</option>
+												<option value="Interior Designer">Interior Designer</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- BANKING AND FINANCE --'>
+												<option value="Charted Accountant">Charted Accountant</option>
+												<option value="Company Secretary">Company Secretary</option>
+												<option value="Accounts and Finance Professional">Accounts and Finance Professional</option>
+												<option value="Banking Service Professional">Banking Service Professional</option>
+												<option value="Auditor">Auditor</option>
+												<option value="Financial Accountant">Financial Accountant</option>
+												<option value="Financial Analyst and Planning">Financial Analyst and Planning</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- BEAUTY AND FASHION --'>
+												<option value="Fashion Designer">Fashion Designer</option>
+												<option value="Beautician">Beautician</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- CIVIL SERVICES --'>
+												<option value="Civil Services (IAS/IPS/IRS/IES/IFS)">Civil Services (IAS/IPS/IRS/IES/IFS)</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- DEFENCE --'>
+												<option value="Army">Army</option>
+												<option value="Navy">Navy</option>
+												<option value="Air Force">Air Force</option>
+												<option value="Mariner / Merchant Navy">Mariner / Merchant Navy</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- EDUCATION --'>
+												<option value="Professor / Lecturer">Professor / Lecturer</option>
+												<option value="Teaching / Academician">Teaching / Academician</option>
+												<option value="Education Professional">Education Professional</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- HOSPITALITY --'>
+												<option value="Hotel / Hospitality Professional">Hotel / Hospitality Professional</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- IT AND ENGINEERING --'>
+												<option value="Software Professional">Software Professional</option>
+												<option value="Hardware Professional">Hardware Professional</option>
+												<option value="Engineer - Non IT">Engineer - Non IT</option>
+												<option value="Web Designer">Web Designer</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- LEGAL --'>
+												<option value="Lawyer and Legal Professional">Lawyer and Legal Professional</option>
+												<option value="Law Enforcement Officer">Law Enforcement Officer</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- MEDICAL --'>
+												<option value="Docter">Docter</option>
+												<option value="Health Care Professional">Health Care Professional</option>
+												<option value="Paramedical Professional">Paramedical Professional</option>
+												<option value="Nurse">Nurse</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- MARKETING AND SALES --'>
+												<option value="Marketing Professional">Marketing Professional</option>
+												<option value="Sales Professional">Sales Professional</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- MEDIA ENTERTAINMENT --'>
+												<option value="Journalist">Journalist</option>
+												<option value="Media Professional">Media Professional</option>
+												<option value="Entertainment Professional">Entertainment Professional</option>
+												<option value="Event Management Professional">Event Management Professional</option>
+												<option value="Advertising / PR Professional">Advertising / PR Professional</option>
+												<option value="Designer">Designer</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- SCIENTIST --'>
+												<option value="Scientist / Researcher">Scientist / Researcher</option>
+												</optgroup>
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- TOP MANAGMENT --'>
+												<option value="Other">CXO / President, Director, Chairman</option>
+												</optgroup>
+												
+												<optgroup class='a' label='&nbsp;&nbsp;&nbsp;&nbsp;-- OTHERS --'>
+												<option value="Consultant">Consultant</option>
+												<option value="Customer Care Professional">Customer Care Professional</option>
+												<option value="Social Worker">Social Worker</option>
+												<option value="Sportsman">Sportsman</option>
+												<option value="Technician">Technician</option>
+												<option value="Arts and Craftsman">Arts and Craftsman</option>
+												<option value="Librarian">Librarian</option>
+												<option value="Business Owner / Entrepreneur">Business Owner / Entrepreneur</option>
+												<option value="Other">Other</option>
+												</optgroup>							
+										</select>
+											
+										
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										
+											<div align="left" class="form-group">
+												<div class="col-sm-4"><label for="sel1">Monthly Income :</label> </div>
+												
+												<div class="col-sm-8">
+												
+												<select name="incomecurrency" th:feild="*{incomecurrency}" id="INCOME_CURRENCY" class="form-control" >
+													<option selected="selected" value="">Select currency</option>
+													<option value="America (United States) Dollars - USD">America (United States) Dollars – USD</option>
+													<option value="Afghanistan Afghanis - AFN">Afghanistan Afghanis – AFN</option>
+													<option value="Albania Leke - ALL">Albania Leke – ALL</option>
+													<option value="Algeria Dinars - DZD">Algeria Dinars – DZD</option>
+													<option value="Argentina Pesos - ARS">Argentina Pesos – ARS</option>
+													<option value="Australia Dollars - AUD">Australia Dollars – AUD</option>
+													<option value="Austria Schillings - ATS">Austria Schillings – ATS</option>
+													 
+													<option value="Bahamas Dollars - BSD">Bahamas Dollars – BSD</option>
+													<option value="Bahrain Dinars - BHD">Bahrain Dinars – BHD</option>
+													<option value="Bangladesh Taka - BDT">Bangladesh Taka – BDT</option>
+													<option value="Barbados Dollars - BBD">Barbados Dollars – BBD</option>
+													<option value="Belgium Francs - BEF">Belgium Francs – BEF</option>
+													<option value="Bermuda Dollars - BMD">Bermuda Dollars – BMD</option>
+													 
+													<option value="Brazil Reais - BRL">Brazil Reais – BRL</option>
+													<option value="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
+													<option value="Canada Dollars - CAD">Canada Dollars – CAD</option>
+													<option value="CFA BCEAO Francs - XOF">CFA BCEAO Francs – XOF</option>
+													<option value="CFA BEAC Francs - XAF">CFA BEAC Francs – XAF</option>
+													<option value="Chile Pesos - CLP">Chile Pesos – CLP</option>
+													 
+													<option value="China Yuan Renminbi - CNY">China Yuan Renminbi – CNY</option>
+													<option value="RMB (China Yuan Renminbi) - CNY">RMB (China Yuan Renminbi) – CNY</option>
+													<option value="Colombia Pesos - COP">Colombia Pesos – COP</option>
+													<option value="CFP Francs - XPF">CFP Francs – XPF</option>
+													<option value="Costa Rica Colones - CRC">Costa Rica Colones – CRC</option>
+													<option value="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
+													 
+													<option value="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
+													<option value="Czech Republic Koruny - CZK">Czech Republic Koruny – CZK</option>
+													<option value="Denmark Kroner - DKK">Denmark Kroner – DKK</option>
+													<option value="Deutsche (Germany) Marks - DEM">Deutsche (Germany) Marks – DEM</option>
+													<option value="Dominican Republic Pesos - DOP">Dominican Republic Pesos – DOP</option>
+													<option value="Dutch (Netherlands) Guilders - NLG">Dutch (Netherlands) Guilders – NLG</option>
+													 
+													<option value="Eastern Caribbean Dollars - XCD">Eastern Caribbean Dollars – XCD</option>
+													<option value="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
+													<option value="Estonia Krooni - EEK">Estonia Krooni – EEK</option>
+													<option value="Euro - EUR">Euro – EUR</option>
+													<option value="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
+													<option value="Finland Markkaa - FIM">Finland Markkaa – FIM</option>
+													 
+													<option value="France Francs - FRF*">France Francs – FRF*</option>
+													<option value="Germany Deutsche Marks - DEM">Germany Deutsche Marks – DEM</option>
+													<option value="Gold Ounces - XAU">Gold Ounces – XAU</option>
+													<option value="Greece Drachmae - GRD">Greece Drachmae – GRD</option>
+													<option value="Guatemalan Quetzal - GTQ">Guatemalan Quetzal – GTQ</option>
+													<option value="Holland (Netherlands) Guilders - NLG">Holland (Netherlands) Guilders – NLG</option>
+													<option value="Hong Kong Dollars - HKD">Hong Kong Dollars – HKD</option>
+													 
+													<option value="Hungary Forint - HUF">Hungary Forint – HUF</option>
+													<option value="Iceland Kronur - ISK">Iceland Kronur – ISK</option>
+													<option value="IMF Special Drawing Right - XDR">IMF Special Drawing Right – XDR</option>
+													<option value="India Rupees - INR">India Rupees – INR</option>
+													<option value="Indonesia Rupiahs - IDR">Indonesia Rupiahs – IDR</option>
+													<option value="Iran Rials - IRR">Iran Rials – IRR</option>
+													 
+													<option value="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
+													<option value="Ireland Pounds - IEP*">Ireland Pounds – IEP*</option>
+													<option value="Israel New Shekels - ILS">Israel New Shekels – ILS</option>
+													<option value="Italy Lire - ITL*">Italy Lire – ITL*</option>
+													<option value="Jamaica Dollars - JMD">Jamaica Dollars – JMD</option>
+													<option value="Japan Yen - JPY">Japan Yen – JPY</option>
+													 
+													<option value="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
+													<option value="Kenya Shillings - KES">Kenya Shillings – KES</option>
+													<option value="Korea (South) Won - KRW">Korea (South) Won – KRW</option>
+													<option value="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
+													<option value="Lebanon Pounds - LBP">Lebanon Pounds – LBP</option>
+													<option value="Luxembourg Francs - LUF">Luxembourg Francs – LUF</option>
+													 
+													<option value="Malaysia Ringgits - MYR">Malaysia Ringgits – MYR</option>
+													<option value="Malta Liri - MTL">Malta Liri – MTL</option>
+													<option value="Mauritius Rupees - MUR">Mauritius Rupees – MUR</option>
+													<option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+													<option value="Morocco Dirhams - MAD">Morocco Dirhams – MAD</option>
+													<option value="Netherlands Guilders - NLG">Netherlands Guilders – NLG</option>
+													 
+													<option value="New Zealand Dollars - NZD">New Zealand Dollars – NZD</option>
+													<option value="Norway Kroner - NOK">Norway Kroner – NOK</option>
+													<option value="Oman Rials - OMR">Oman Rials – OMR</option>
+													<option value="Pakistan Rupees - PKR">Pakistan Rupees – PKR</option>
+													<option value="Palladium Ounces - XPD">Palladium Ounces – XPD</option>
+													<option value="Peru Nuevos Soles - PEN">Peru Nuevos Soles – PEN</option>
+													 
+													<option value="Philippines Pesos - PHP">Philippines Pesos – PHP</option>
+													<option value="Platinum Ounces - XPT">Platinum Ounces – XPT</option>
+													<option value="Poland Zlotych - PLN">Poland Zlotych – PLN</option>
+													<option value="Portugal Escudos - PTE">Portugal Escudos – PTE</option>
+													<option value="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
+													<option value="Romania New Lei - RON">Romania New Lei – RON</option>
+													 
+													<option value="Romania Lei - ROL">Romania Lei – ROL</option>
+													<option value="Russia Rubles - RUB">Russia Rubles – RUB</option>
+													<option value="Saudi Arabia Riyals - SAR">Saudi Arabia Riyals – SAR</option>
+													<option value="Silver Ounces - XAG">Silver Ounces – XAG</option>
+													<option value="Singapore Dollars - SGD">Singapore Dollars – SGD</option>
+													<option value="Slovakia Koruny - SKK">Slovakia Koruny – SKK</option>
+													 
+													<option value="Slovenia Tolars - SIT">Slovenia Tolars – SIT</option>
+													<option value="South Africa Rand - ZAR">South Africa Rand – ZAR</option>
+													<option value="South Korea Won - KRW">South Korea Won – KRW</option>
+													<option value="Spain Pesetas - ESP">Spain Pesetas – ESP</option>
+													<option value="Special Drawing Rights (IMF) - XDR">Special Drawing Rights (IMF) – XDR</option>
+													<option value="Sri Lanka Rupees - LKR">Sri Lanka Rupees – LKR</option>
+													 
+													<option value="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
+													<option value="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
+													<option value="Switzerland Francs - CHF">Switzerland Francs – CHF</option>
+													<option value="Taiwan New Dollars - TWD">Taiwan New Dollars – TWD</option>
+													<option value="Thailand Baht - THB">Thailand Baht – THB</option>
+													<option value="Trinidad and Tobago Dollars - TTD">Trinidad and Tobago Dollars – TTD</option>
+													 
+													<option value="Tunisia Dinars - TND">Tunisia Dinars – TND</option>
+													<option value="Turkey New Lira - TRY">Turkey New Lira – TRY</option>
+													<option value="United Arab Emirates Dirhams - AED">United Arab Emirates Dirhams – AED</option>
+													<option value="United Kingdom Pounds - GBP">United Kingdom Pounds – GBP</option>
+													<option value="United States Dollars - USD">United States Dollars – USD</option>
+													<option value="Venezuela Bolivares - VEB">Venezuela Bolivares – VEB</option>
+													 
+													<option value="Vietnam Dong - VND">Vietnam Dong – VND</option>
+													<option value="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
+													</select>
+													<div><p>&nbsp;</p></div>	
+					
+					<input size="30" name="income" th:feild="*{income}" id="INCOME" type="text" placeholder="Enter Income"  maxlength="100"  style="width:230px;"/>
+			
+											</div>
+								
+										<div><p>&nbsp;</p></div>		
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="sel1">Citizenship * :</label></div>
+											<div class="col-sm-8">   <select  th:feild="*{citizenship}" class="form-control countries" name="citizenship" id="countryId sel1">
+    																<option value="">Select Country</option>
+											  </select>
+
+										
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="sel1">Country living in * :</label></div>
+											<div class="col-sm-8">   <select  th:feild="*{country}" class="form-control countries" name="country" id="countryId sel1">
+    																<option value="">Select Country</option>
+											  </select>
+
+										
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="sel1">State living in&nbsp;* :</label> </div>
+											<div class="col-sm-8">
+											
+											<select th:feild="*{state}" class="form-control states" name="state" id="sel12 stateId">
+											   <option value="">Select State</option>
+											</select>
+										</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>	
+											<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="usr">City living in * :</label> </div>
+											<div class="col-sm-8"> 
+											
+											<select th:feild="*{residingCity}" class="form-control cities" id="sel13 cityId" name="residingCity">
+   												<option value="">Select City</option>
+											</select>
+											
+																					
+											</div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										<div align="left" class="form-group">
+											<div class="col-sm-4"><label for="usr">Gothra(m) :</label> </div>
+											<div class="col-sm-8"><input type="text" class="form-control" id="usr" name="gothra" th:feild="*{gothra}" placeholder="Please Enter Gothra" /></div>
+										</div>
+										
+										<div><p>&nbsp;</p></div>
+										
+										
+										<div class="col-sm-4"><label for="sel1">Star :</label></div>
+										
+										<div align="left" class="form-group">
+										<div class="col-sm-8">	<select name="star" th:feild="*{star}" id="STAR" class="form-control" style="width:240px;padding:3px 15px 7px 5px;height:35px;background-position:93% 11px;" >
+										
+										<option value="0" selected="selected">- Please Select Star -</option>
+												<option style="" value="Aswini">Aswini</option><option style="" value="Bharani">Bharani</option><option style="" value="Kruthika">Kruthika</option><option style="" value="Rohini">Rohini</option><option style="" value="Mrigasira">Mrigasira</option><option style="" value="Arudra">Arudra</option><option style="" value="Punarvasu">Punarvasu</option><option style="" value="Pushya">Pushya</option><option style="" value="Asilesha">Asilesha</option><option style="" value="Magha">Magha</option><option style="" value="Poorvaphalguni">Poorvaphalguni</option><option style="" value="Uthiraphalguni">Uthiraphalguni</option><option style="" value="Hastha">Hastha</option><option style="" value="Chitra">Chitra</option><option style="" value="Swati">Swati</option><option style="" value="Visaka">Visaka</option><option style="" value="Anuradha">Anuradha</option><option style="" value="Jyeshta">Jyeshta</option><option style="" value="Mula">Mula</option><option style="" value="Poorvashada">Poorvashada</option><option style="" value="Uthrashada">Uthrashada</option><option style="" value="Sravan">Sravan</option><option style="" value="Dhanishta">Dhanishta</option><option style="" value="Shatataraka">Shatataraka</option><option style="" value="Poorvabhadra">Poorvabhadra</option><option style="" value="Uthirabhadra">Uthirabhadra</option><option style="" value="Revathi">Revathi</option>			
+										</select>
+										</div>
+																		
+											<div><p>&nbsp;</p></div>
+											
+											<div class="col-sm-4"><label for="usr">Manglik :</label></div>
+																						
+											<div align="left" class="form-group">
+											<div class="col-sm-8">
+												<input name="maglik" th:feild="*{maglik}" id="MANGLIK1" value="Yes" type="checkbox" /> Yes
+							 					<input name="maglik" th:feild="*{maglik}" id="MANGLIK2" value="No" type="checkbox" checked="" /> No
+                             					<input name="maglik" th:feild="*{maglik}" id="MANGLIK3" value="Doesn't matter" type="checkbox" /> Doesn't matter
+
+											</div>
+											</div>
+											
+											<div><p>&nbsp;</p></div>
+											
+											<div class="col-sm-4"><label for="sel1">Raasi/moon sign :</label> </div>
+											<div class="col-sm-8">
+											 <select name="raasi" th:feild="*{raasi}" id="RAASI" class="form-control" style="width:240px;padding:3px 15px 7px 5px;height:35px;background-position:93% 11px;" >
+												<option value="">Select Raasi</option>
+												<option value="Mesha (Aries)">Mesha (Aries)</option>
+												<option value="Vrishabha (Taurus)">Vrishabha (Taurus)</option>
+												<option value="Mithun (Gemini)">Mithun (Gemini)</option>
+												<option value="Karka (Cancer)">Karka (Cancer)</option>
+												<option value="Simha / Sinh (Leo)">Simha / Sinh (Leo)</option>
+												<option value="Kanya (Vigro)">Kanya (Vigro)</option>
+												<option value="Tula (Libra)">Tula (Libra)</option>
+												<option value="Vruschika (Scorpius)">Vruschika (Scorpius)</option>
+												<option value="Dhanu (Sagittarius)">Dhanu (Sagittarius)</option>
+												<option value="Makar (Capricorn)">Makar (Capricorn)</option>
+												<option value="Kumbha (Aquarius)">Kumbha (Aquarius)</option>
+												<option value="Meena (Pisces)">Meena (Pisces)</option>
+											</select>
+											</div>
+										</div>
+										
+																			
+										<div align="center"><p>&nbsp;</p><p>&nbsp;</p>
+										<input type="submit" alt="Submit" class="btn btn-primary btn-block" style="width:155px;" />
+										</div>  
+									</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- This works. We need to set this as background -->
+			</div><!--/Intro content-->
+		</div><!--/.Mask-->
+		
+		<!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+  <script src="js/jquery.multi-select.js"></script>
+  <script type="text/javascript">
+  // run pre selected options
+  $('#pre-selected-options').multiSelect();
+  </script>
+  
+		<script lang="javascript" src="js/jquery-1.12.4.min.js">
+		</script> 
+		<script src="js/counter.js">
+		</script> 
+		<script>
+		
+		function feetToCms(str,id) {
+		    var res = str.split("-");
+			var ft = parseInt(res[0])
+			var cm = ft*30.38
+			var inc = parseInt(res[1])
+			var cmi = inc*2.54
+			var cmh = Math.round(cm+cmi)
+		    document.getElementById(id).value = cmh;
+		}
+		
+		function cmsToFeet(str,id) {
+			var cm = parseFloat(str)
+			var ft = cm*0.0328084
+			var a = Math.trunc(ft)	
+			var b = ft - Math.floor(ft)	
+			var inc = Math.round(b*11)
+			var res = ""+a+"-"+inc
+			document.getElementById(id).value = res;
+		}
+
+		          $(document).ready(function (){
+		              'use strict';
+		          
+		              // works on one field
+		        $('textarea, ._textfield').countChar();
+		          });
+		</script>
+		<script type="text/javascript">
+
+		    var _gaq = _gaq || [];
+		    _gaq.push(['_setAccount', 'UA-36251023-1']);
+		    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+		    _gaq.push(['_trackPageview']);
+
+		    (function() {
+		      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		    })();
+
+		</script>
+		<div id="footer">
+			<div class="container">
+				<p style="padding-top:20px">&nbsp;</p>
+				<p align="center">COPYRIGHT 2017 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.3dpower.in/" target="_blank">3D POWER VISULIZATION PVT. LTD.</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>	

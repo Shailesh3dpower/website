@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+  <title>Modify Profile</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="css/fiddle.css"/>
+   
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/fiddle.js"></script>
+	
+  
+  
+  	<style>
+	
+html,
+body,
+.view {
+    height: 100%;
+}
+
+.view {
+    background: "" no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.style2 {color: #00CC00}
+
+
+.navbar-nav {
+width: 100%;
+text-align: center;
+}
+.navbar-nav > li {
+float: none;
+display: inline-block;
+}
+
+.navbar-right {
+width: 100%;
+text-align: right;
+padding-right:70px;
+}
+.navbar-nav > li {
+float: none;
+display: inline-block;
+}
+
+.panel-default {
+width:650px;
+} 
+
+
+
+</style>
+<!-- Navigation bar to Center align -->	
+	
+	
+	
+	<style th:inline="text">
+    body{
+      <!--  background: url{[[@{image/indian-matrimony-business.jpg}]]}
+                    no-repeat center center fixed; -->
+    }
+</style>
+ 
+	 
+</head>
+<body>
+
+   <!-- Navigation -->
+   
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<div class="row">
+
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+
+<div id="navbar" class="navbar-collapse collapse">
+
+<ul class="nav navbar-nav">
+		<li class="active"><img src="logo.png"></li>
+        <li class="active"><a href="#">Home</a>		</li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Profile<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Who Viewed my Profile</a></li>
+            <li><a href="#">Who Shortlisted Me</a></li>
+            <li><a href="#">Who Viewed my Mobile no</a></li>
+          </ul>
+        </li>
+		
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Search<span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+            <li><a href="#">Regular Search</a></li>
+            <li><a href="#">Advanced Search</a></li>
+            <li><a href="#">Search By Date</a></li>
+            <li><a href="#">Keyword Search</a></li>
+          </ul>
+        </li>
+		
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Matches<span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+            <li><a href="#">New Matches</a></li>
+            <li><a href="#">Yet to be Viewed</a></li>
+            <li><a href="#">Shortlisted</a></li>
+            <li><a href="#">Mutual Matches</a></li>
+          </ul>
+        </li>
+
+		
+        <li><a href="#">Upgrade</a></li>
+		
+		<li><a href="home.html"><span class="glyphicon glyphicon-log-out" style="size:15px;"></span> &nbsp;&nbsp;&nbsp;Logout</a></li>
+      </ul>
+      
+</div>
+</div>
+</div>
+</nav>
+
+   
+<!--Mask-->
+<div class="view" style="padding-top:70px;">
+
+
+    <!--Intro content-->
+    <div class="full-bg-img flex-center">
+<!--    <img  src="../static/images/indian-matrimony-business.jpg" th:src="@{images/indian-matrimony-business.jpg}" style="width:100%"/>-->
+
+        
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center"><strong>PERSONAL INFORMATION</strong></h3>
+                    </div>
+						
+                    <div class="panel-body">
+					<div class="form-group">
+                        <form id=order action=form.php >
+						<!-- Basic Details - Information - Start -->
+                <a name="mn"><!--  --></a>
+					
+<div class='row text-center'>
+    <a class="btn btn-danger editBtn">Edit </a><p>
+</div>
+
+<div class="container">
+
+			
+	<div class="row" align="center">
+	  <form role="form">
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Profile created for</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField" value="My Self" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Name</label>
+                         <input type="text" style="width:175px" class="form-control editField" value="Vijay Goyal" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Body Type</label>
+            <input type="text" style="width:175px" class="form-control editField" value="Athletic" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Age</label>
+             <input type="text" style="width:175px" class="form-control editField" value="27 Years" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Physical Status</label>
+            <input type="text" style="width:175px" class="form-control editField" value="Normal" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Height</label>
+             <input type="text" style="width:175px" class="form-control editField" value="5 Ft 5  In / 165 Cms" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Complexion</label>
+            <input type="text" style="width:175px" class="form-control editField" value="Fair" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Weight</label>
+             <input type="text" style="width:175px" class="form-control editField" value="75 Kgs" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Marital Status</label>
+            <input type="text" style="width:175px" class="form-control editField" value="Never married" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Eating Habits</label>
+             <input type="text" style="width:175px" class="form-control editField" value="Vegetarian" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Drinking Habits</label>
+            <input type="text" style="width:175px" class="form-control editField" value="No" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Smoking Habits</label>
+             <input type="text" style="width:175px" class="form-control editField" value="No" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		
+		
+		
+        <div class="col-sm-6 col-md-6 col-lg-6" align="center">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+
+    </form>
+    <div class="clearfix"></div>
+
+    <br /><br />
+	</div>
+</div>
+
+
+					
+						
+					
+						
+
+                </div>
+            </div>
+        </div>
+		</div>
+	
+	
+	<!-- Religions Information Starts -->
+		
+		<div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center"><strong>RELIGION INFORMATION</strong></h3>
+                    </div>
+						
+                    <div class="panel-body">
+					<div class="form-group">
+                        <form id=order action=form.php >
+						<!-- Basic Details - Information - Start -->
+                <a name="mn"><!--  --></a>
+					
+<div class='row text-center'>
+    <a class="btn btn-danger editBtn1">Edit </a><p>
+</div>
+
+<div class="container">
+
+			
+	<div class="row" align="center">
+	  <form role="form">
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Religion</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField1" value="Hindu" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Caste / Sub Caste</label>
+                         <input type="text" style="width:175px" class="form-control editField1" value="Brahmin Bhargav (Caste No Bar)" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Gothram</label>
+            <input type="text" style="width:175px" class="form-control editField1" value="Not Specified" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Star</label>
+             <input type="text" style="width:175px" class="form-control editField1" value="Aswini" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Raasi</label>
+            <input type="text" style="width:175px" class="form-control editField1" value="Mesh (Aries)" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Dosh</label>
+             <input type="text" style="width:175px" class="form-control editField1" value="No" readonly>
+        </div>
+        <div class="clearfix"></div>
+			
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Groom's Country</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField1" value="India" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Groom's City</label>
+                         <input type="text" style="width:175px" class="form-control editField1" value="Aurangabad (Maharashtra)" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Groom's State</label>
+            <input type="text" style="width:175px" class="form-control editField1" value="Maharashtra" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Groom's State</label>
+             <input type="text" style="width:175px" class="form-control editField1" value="India" readonly>
+        </div>
+        <div class="clearfix"></div>
+			
+		
+        <div class="col-sm-6 col-md-6 col-lg-6" align="center">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+
+    </form>
+    <div class="clearfix"></div>
+
+    <br /><br />
+	</div>
+</div>
+
+
+					
+						
+					
+						
+
+                </div>
+            </div>
+        </div>
+		</div>
+		
+
+	<!-- Family / Professional  Information Starts -->
+		
+		<div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center"><strong>FAMILY / PROFESSIONAL INFORMATION</strong></h3>
+                    </div>
+						
+                    <div class="panel-body">
+					<div class="form-group">
+                        <form id=order action=form.php >
+						<!-- Basic Details - Information - Start -->
+                <a name="mn"><!--  --></a>
+					
+<div class='row text-center'>
+    <a class="btn btn-danger editBtn2">Edit </a><p>
+</div>
+
+<div class="container">
+
+			
+	<div class="row" align="center">
+	  <form role="form">
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Family Values</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField2" value="Traditional" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Father's Status</label>
+                         <input type="text" style="width:175px" class="form-control editField2" value="Business Man" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Family Type</label>
+            <input type="text" style="width:175px" class="form-control editField2" value="Joint" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Mother's Status</label>
+             <input type="text" style="width:175px" class="form-control editField2" value="Homemaker" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Family Status</label>
+            <input type="text" style="width:175px" class="form-control editField2" value="Rich" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">No of Brother(s)</label>
+             <input type="text" style="width:175px" class="form-control editField2" value="None" readonly>
+        </div>
+        <div class="clearfix"></div>
+			
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">No of Sister(s)</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField2" value="None" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Family Location</label>
+                         <input type="text" style="width:175px" class="form-control editField2" value="Not Specified" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Education</label>
+            <input type="text" style="width:175px" class="form-control editField2" value="BE" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">College / Institution</label>
+             <input type="text" style="width:175px" class="form-control editField2" value="Not Specified" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Employed in</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField2" value="Private Sector" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Occupation</label>
+                         <input type="text" style="width:175px" class="form-control editField2" value="Software Professional" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Occupation in Detail</label>
+            <input type="text" style="width:175px" class="form-control editField2" value="Not Specified" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Annual Income</label>
+             <input type="text" style="width:175px" class="form-control editField2" value="Rs. 9,60,000	" readonly>
+        </div>
+        <div class="clearfix"></div>
+
+		
+		
+        <div class="col-sm-6 col-md-6 col-lg-6" align="center">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+
+    </form>
+    <div class="clearfix"></div>
+
+    <br /><br />
+	</div>
+</div>
+
+
+					
+						
+					
+						
+
+                </div>
+            </div>
+        </div>
+	</div>
+		
+    
+	<!-- Partner Preference  Information Starts -->
+		
+		<div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center"><strong>PARTNER PREFERENCE INFORMATION</strong></h3>
+                    </div>
+						
+                    <div class="panel-body">
+					<div class="form-group">
+                        <form id=order action=form.php >
+						<!-- Basic Details - Information - Start -->
+                <a name="mn"><!--  --></a>
+					
+<div class='row text-center'>
+    <a class="btn btn-danger editBtn3">Edit </a><p>
+</div>
+
+<div class="container">
+
+			
+	<div class="row" align="center">
+	  <form role="form">
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Bride's Age</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField3" value="20 - 27 Years" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Height</label>
+                         <input type="text" style="width:175px" class="form-control editField3" value="4 Ft 6 In - 4 Ft 10 In" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Marital status</label>
+            <input type="text" style="width:175px" class="form-control editField3" value="Any Marital status" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Physical Status</label>
+             <input type="text" style="width:175px" class="form-control editField3" value="Normal" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Have Child</label>
+            <input type="text" style="width:175px" class="form-control editField3" value="Doesn't matter" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Eating Habits</label>
+             <input type="text" style="width:175px" class="form-control editField3" value="Any" readonly>
+        </div>
+        <div class="clearfix"></div>
+			
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Smoking Habits</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField3" value="Doesn't matter" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Drinking Habits</label>
+                         <input type="text" style="width:175px" class="form-control editField3" value="Doesn't matter" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Religion</label>
+            <input type="text" style="width:175px" class="form-control editField3" value="Hindu" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Mother Tongue</label>
+             <input type="text" style="width:175px" class="form-control editField3" value="Marathi" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3 form-group">
+            <label for="example">Caste</label>
+			<div class="input-group">
+            <input type="text" style="width:175px" class="form-control editField3" value="Brahmin - Bhargav, Caste no bar" readonly>
+			</div>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Star</label>
+                         <input type="text" style="width:175px" class="form-control editField3" value="Any Star" readonly>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Gothra</label>
+            <input type="text" style="width:175px" class="form-control editField3" value="Any" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Manglik</label>
+             <input type="text" style="width:175px" class="form-control editField3" value="No" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Education</label>
+            <input type="text" style="width:175px" class="form-control editField3" value="Any" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Occupation</label>
+             <input type="text" style="width:175px" class="form-control editField3" value="Any" readonly>
+        </div>
+        <div class="clearfix"></div>
+		
+		<div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Annual Income</label>
+            <input type="text" style="width:175px" class="form-control editField3" value="Any Income" readonly>
+        </div>
+        <div class="form-group col-xs-10 col-sm-3 col-md-3 col-lg-3">
+            <label for="example">Location</label>
+             <input type="text" style="width:175px" class="form-control editField3" value="India" readonly>
+        </div>
+        <div class="clearfix"></div>
+
+		
+		
+        <div class="col-sm-6 col-md-6 col-lg-6" align="center">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+
+    </form>
+    <div class="clearfix"></div>
+
+    <br /><br />
+	</div>
+</div>
+
+
+					
+						
+					
+						
+
+                </div>
+            </div>
+        </div>
+	</div>
+
+<style>
+#container1 {
+    background-color: #e2dada;
+}
+
+.centered-form {
+    margin-top: 90px;
+    margin-bottom: 0px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+</style>
+    
+    
+    
+     <!-- This works. We need to set this as background -->
+	 
+  
+  <script type="text/javascript">
+        function showValue(newValue)
+        {
+            document.getElementById("range").innerHTML=newValue;
+        }
+  </script>
+     
+          
+       
+	
+    </div>
+    <!--/Intro content-->
+</div>
+<!--/.Mask-->
+
+
+</body>
+</html>
+
+
+
